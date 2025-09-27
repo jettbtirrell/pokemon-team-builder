@@ -48,7 +48,7 @@ const effectiveness = (attackType, defenderTypes) => {
  * @returns {boolean} Whether the atttacker's attack is effective against the defender.
  */
 const isEffective = (attackType, attackerTypes, defenderType) => {
-    return effectiveness(attackType, [defenderType]) > 1 && effectiveness(defenderType, attackerTypes) <= 1;
+    return effectiveness(attackType, [defenderType]) > 1 && effectiveness(defenderType, attackerTypes) < 1;
 };
 
 /**

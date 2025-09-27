@@ -14,6 +14,8 @@
 .pokemon-picker .pokemon-image {
   max-width: 100%;
   max-height: 100px;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
 }
 
 .pokemon-picker .css-yk16xz-control {

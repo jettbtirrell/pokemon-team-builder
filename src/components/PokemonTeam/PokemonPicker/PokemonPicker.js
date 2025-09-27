@@ -58,10 +58,12 @@ const PokemonPicker = ({ onPickerChange, initialPokemon, initialTypes }) => {
       const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonId}`);
       const data = await response.json();
 
+      const gen5Animated = data.sprites?.versions?.["generation-v"]?.["black-white"]?.animated?.front_default;
+
       const showdownImage = data.sprites.other?.showdown?.front_default;
       const defaultImage = data.sprites.front_default;
 
-      setPokemonImage(showdownImage || defaultImage);
+      setPokemonImage(gen5Animated || showdownImage || defaultImage);
 
       let types = data.types.map(typeInfo => typeInfo.type.name);
 

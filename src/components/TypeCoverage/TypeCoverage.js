@@ -27,7 +27,7 @@ const TypeCoverage = ({ pokemonTeam }) => {
           <FontAwesomeIcon icon={faInfoCircle} data-tooltip-id="infoTooltip" className="info-icon" />
         </p>
         <Tooltip id="infoTooltip" place="top" effect="solid" className="custom-tooltip">
-          An effective counter is defined as a Pokémon whose damaging moves are super effective against the target, AND the target's STAB moves are not super effective against the Pokémon.
+          An effective counter is defined as a Pokémon whose damaging moves are super effective against the target, AND the target's STAB moves are have less than neutral effectiveness against the Pokémon.
         </Tooltip>
         {TYPES.map((type) => (
           <div key={type} className="type-coverage-row">

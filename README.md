@@ -1,3 +1,11 @@
+# Changes in this Branch
+- Switched to using Generation V sprites/animations as opposed to 3d models.
+    - CSS tweaks for pixelated scaling of these sprites.
+- Changed the counter definition to require resistance against the type.
+
+All credit for the base project goes to Kellen Vu – this branch is just me making some edits for my own playthrough!
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

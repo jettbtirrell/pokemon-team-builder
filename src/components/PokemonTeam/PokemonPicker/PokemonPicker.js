@@ -8,8 +8,10 @@ import TypeIcon from '../../TypeIcon/TypeIcon';
 const PokemonPicker = ({ onPickerChange, initialPokemon, initialTypes }) => {
   const [selectedPokemon, setSelectedPokemon] = useState(initialPokemon ? { label: initialPokemon, value: initialPokemon } : null);
   const [selectedTypes, setSelectedTypes] = useState(initialTypes || []);
-  const [pokemonImage, setPokemonImage] = useState('');
   const [pokemonTypes, setPokemonTypes] = useState([]);
+  const [isShiny, setIsShiny] = useState(false);
+  const [pokemonSprites, setPokemonSprites] = useState({ normal: '', shiny: '' });
+
 
   const pokemonOptions = pokemon.all().slice(0, 649).sort().map((name) => ({
     label: name,
@@ -33,7 +35,7 @@ const PokemonPicker = ({ onPickerChange, initialPokemon, initialTypes }) => {
     onPickerChange(name, selectedTypes);
 
     if (!name) {
-      setPokemonImage('');
+      setPokemonSprites({ normal: '', shiny: '' });
       setPokemonTypes([]);
     } else {
       await fetchPokemonData(name);
@@ -58,12 +60,15 @@ const PokemonPicker = ({ onPickerChange, initialPokemon, initialTypes }) => {
       const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonId}`);
       const data = await response.json();
 
-      const gen5Animated = data.sprites?.versions?.["generation-v"]?.["black-white"]?.animated?.front_default;
+      const gen5Animated = data.sprites?.versions?.["generation-v"]?.["black-white"]?.animated;
 
-      const showdownImage = data.sprites.other?.showdown?.front_default;
-      const defaultImage = data.sprites.front_default;
+      const normalSprite =
+        gen5Animated?.front_default || data.sprites.front_default;
 
-      setPokemonImage(gen5Animated || showdownImage || defaultImage);
+      const shinySprite =
+        gen5Animated?.front_shiny || data.sprites.front_shiny;
+
+      setPokemonSprites({ normal: normalSprite, shiny: shinySprite });
 
       let types = data.types.map(typeInfo => typeInfo.type.name);
 
@@ -75,7 +80,7 @@ const PokemonPicker = ({ onPickerChange, initialPokemon, initialTypes }) => {
       setPokemonTypes(types);
     } catch (error) {
       console.error('Error fetching Pokémon data:', error);
-      setPokemonImage('');
+      setPokemonSprites({ normal: "", shiny: "" });
       setPokemonTypes([]);
     }
   };
@@ -83,6 +88,7 @@ const PokemonPicker = ({ onPickerChange, initialPokemon, initialTypes }) => {
   return (
     <div className="pokemon-picker">
       <Select
+        classNamePrefix="react-select"
         value={selectedPokemon}
         onChange={handlePokemonChange}
         options={pokemonOptions}
@@ -95,13 +101,23 @@ const PokemonPicker = ({ onPickerChange, initialPokemon, initialTypes }) => {
         ))}
       </div>
       <div className="pokemon-image-box">
-        {pokemonImage && (
-          <img
-            src={pokemonImage}
-            alt={selectedPokemon ? selectedPokemon.label : ''}
-            className="pokemon-image"
-            onError={() => setPokemonImage('')}
-          />
+        {pokemonSprites.normal && (
+          <>
+            <img
+              src={isShiny ? pokemonSprites.shiny : pokemonSprites.normal}
+              alt={selectedPokemon ? selectedPokemon.label : ''}
+              className="pokemon-image"
+              onError={() => setPokemonSprites({ normal: '', shiny: '' })}
+            />
+            {pokemonSprites.shiny && (
+              <button
+                className="shiny-toggle"
+                onClick={() => {console.log("clicked, new state:", !isShiny); setIsShiny((prev) => !prev)}}
+              >
+                {isShiny ? '⚪ Normal' : '🌟 Shiny'}
+              </button>
+            )}
+          </>
         )}
       </div>
       <p className="">Damaging Moves:</p>

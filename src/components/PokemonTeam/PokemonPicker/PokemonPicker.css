@@ -8,14 +8,15 @@
 
 .pokemon-picker .pokemon-image-box {
   margin-top: 10px;
-  z-index: -1;
 }
 
 .pokemon-picker .pokemon-image {
-  max-width: 100%;
-  max-height: 100px;
+  max-width: 200%;
+  max-height: 200%;
   image-rendering: pixelated;
   image-rendering: crisp-edges;
+  transform: scale(2);
+  transform-origin: bottom right;
 }
 
 .pokemon-picker .css-yk16xz-control {
@@ -58,3 +59,18 @@
   justify-content: center;
   gap: 5px;
 }
+
+.shiny-toggle {
+  position: relative;
+  z-index: 0;
+  margin-top: 8px;
+  padding: 4px 10px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: #f9f9f9;
+  transition: background 0.2s;
+}
+
+

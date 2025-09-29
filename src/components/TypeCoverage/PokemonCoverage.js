@@ -1,5 +1,6 @@
 import React from "react";
 import gen5Data from "../../data/gen5_pokemon.json";
+import "./PokemonCoverage.css";
 
 const PokemonCoverage = ({ pokemonCounters }) => {
   if (!pokemonCounters) {
@@ -14,60 +15,58 @@ const PokemonCoverage = ({ pokemonCounters }) => {
   return (
     <div className="pokemon-coverage">
       <h2>Pokémon Counters</h2>
-      <ul>
+      <div className="pokemon-grid">
         {Object.entries(pokemonCounters).map(([pokemon, counters]) => {
-          const matched = gen5Data.find(
-            (p) => p.name.toLowerCase() === pokemon.toLowerCase()
-          );
+          const matched = gen5Data.find(p => p.name === pokemon.toLowerCase());
+          const hasCounters = counters && counters.length > 0;
+          const displayCounters = (counters || []).slice(0, 6);
 
           return (
-            <li key={pokemon} style={{ marginBottom: "12px" }}>
-              {matched && matched.sprite && (
+            <div
+              key={pokemon}
+              className={`pokemon-card ${hasCounters ? "" : "no-counters"}`}
+            >
+              {matched && (
                 <img
                   src={matched.sprite}
                   alt={pokemon}
-                  style={{
-                    width: "48px",
-                    height: "48px",
-                    marginRight: "6px",
-                    verticalAlign: "middle",
-                  }}
+                  className="pokemon-main-sprite"
                 />
               )}
-              <strong>{pokemon}</strong>
 
-              {counters && counters.length > 0 ? (
-                <span style={{ marginLeft: "8px" }}>
-                  ← countered by{" "}
-                  {counters.map((counter) => {
-                    const counterMatch = gen5Data.find(
-                      (p) => p.name.toLowerCase() === counter.toLowerCase()
+              <div className="counter-slots">
+                {Array.from({ length: 6 }).map((_, i) => {
+                  const counter = displayCounters[i];
+                  if (!counter) {
+                    return (
+                      <div key={i} className="counter-slot empty"></div>
                     );
-                    return counterMatch && counterMatch.icon ? (
-                      <img
-                        key={counter}
-                        src={counterMatch.icon}
-                        alt={counter}
-                        title={counter}
-                        style={{
-                          width: "20px",
-                          height: "20px",
-                          marginRight: "4px",
-                          verticalAlign: "middle",
-                        }}
-                      />
-                    ) : (
-                      <span key={counter}>{counter}</span>
-                    );
-                  })}
-                </span>
-              ) : (
-                <span style={{ marginLeft: "8px" }}>(no counters)</span>
-              )}
-            </li>
+                  }
+
+                  const counterMatch = gen5Data.find(
+                    p => p.name === counter.toLowerCase()
+                  );
+
+                  return (
+                    <div key={i} className="counter-slot filled">
+                      {counterMatch ? (
+                        <img
+                          src={counterMatch.icon}
+                          alt={counter}
+                          title={counter}
+                          className="counter-icon"
+                        />
+                      ) : (
+                        <span>{counter}</span>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
           );
         })}
-      </ul>
+      </div>
     </div>
   );
 };

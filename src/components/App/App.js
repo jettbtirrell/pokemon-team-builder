@@ -20,6 +20,7 @@ function App() {
   const [pokemonTeam, setPokemonTeam] = useState(
     Array(6).fill({ name: '', moveTypes: [], pokemonTypes: [] })
   );
+  const [animationsEnabled, setAnimationsEnabled] = useState(true);
 
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
@@ -92,7 +93,6 @@ function App() {
       return acc;
     }, []);
 
-
   const pokemonCounters = analyzePokemonCounters(filteredPokemonTeam);
 
   const generateURL = () => {
@@ -126,11 +126,18 @@ function App() {
   return (
     <div className="App">
       <h1 className="mb-3">Pokémon Gen II-V Team Builder</h1>
+      <button
+        onClick={() => setAnimationsEnabled((prev) => !prev)}
+        className="toggle-animations-btn"
+      >
+        {animationsEnabled ? "Disable Animations" : "Enable Animations"}
+      </button>
       <Slider className="mb-3" value={numPickers} onChange={handleSliderChange} />
       <PokemonTeam
         numPickers={numPickers}
         onPickerChange={handlePickerChange}
         pokemonTeam={pokemonTeam}
+        animationsEnabled={animationsEnabled}
       />
       <div className="analysis-section">
         <TypeCoverage teamSize={numPickers} pokemonTeam={filteredPokemonTeam} />

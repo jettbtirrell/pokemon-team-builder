@@ -6,7 +6,7 @@ import TypesList from './TypesList/TypesList';
 import TypeIcon from '../../TypeIcon/TypeIcon';
 import { isCounter } from '../../analysis';
 
-const PokemonPicker = ({ onPickerChange, initialPokemon, initialTypes }) => {
+const PokemonPicker = ({ onPickerChange, initialPokemon, initialTypes, animationsEnabled }) => {
   const [selectedPokemon, setSelectedPokemon] = useState(initialPokemon ? { label: initialPokemon, value: initialPokemon } : null);
   const [selectedTypes, setSelectedTypes] = useState(initialTypes || []);
   const [pokemonTypes, setPokemonTypes] = useState([]);
@@ -19,7 +19,6 @@ const PokemonPicker = ({ onPickerChange, initialPokemon, initialTypes }) => {
     label: name,
     value: name,
   }));
-
 
   useEffect(() => {
     const fetchGen5Pokemon = async () => {
@@ -47,7 +46,6 @@ const PokemonPicker = ({ onPickerChange, initialPokemon, initialTypes }) => {
     fetchGen5Pokemon();
   }, []);
 
-
   useEffect(() => {
     if (pokemonTypes.length && gen5Pokemon.length) {
       const foundCounters = gen5Pokemon
@@ -69,6 +67,12 @@ const PokemonPicker = ({ onPickerChange, initialPokemon, initialTypes }) => {
   useEffect(() => {
     setSelectedTypes(initialTypes || []);
   }, [initialTypes]);
+
+  useEffect(() => {
+    if (selectedPokemon) {
+      fetchPokemonData(selectedPokemon.value);
+    }
+  }, [animationsEnabled]);
 
   const handlePokemonChange = async (selectedOption) => {
     const name = selectedOption ? selectedOption.value : '';
@@ -101,8 +105,13 @@ const PokemonPicker = ({ onPickerChange, initialPokemon, initialTypes }) => {
 
       const gen5Animated = data.sprites?.versions?.["generation-v"]?.["black-white"]?.animated;
 
-      const normalSprite = gen5Animated?.front_default || data.sprites.front_default;
-      const shinySprite = gen5Animated?.front_shiny || data.sprites.front_shiny;
+      const normalSprite = animationsEnabled
+        ? gen5Animated?.front_default || data.sprites.front_default
+        : data.sprites.front_default;
+
+      const shinySprite = animationsEnabled
+        ? gen5Animated?.front_shiny || data.sprites.front_shiny
+        : data.sprites.front_shiny;
 
       setPokemonSprites({ normal: normalSprite, shiny: shinySprite });
 

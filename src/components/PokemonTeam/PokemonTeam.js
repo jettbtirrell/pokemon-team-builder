@@ -1,16 +1,17 @@
-import React from 'react';
-import PokemonPicker from './PokemonPicker/PokemonPicker';
-import './PokemonTeam.css';
+import React from "react";
+import PokemonPicker from "./PokemonPicker/PokemonPicker";
+import "./PokemonTeam.css";
 
-const PokemonTeam = ({ numPickers, onPickerChange, pokemonTeam }) => {
+const PokemonTeam = ({ numPickers, onPickerChange, pokemonTeam, animationsEnabled }) => {
   return (
     <div className="pokemon-team">
-      {Array.from({ length: numPickers }).map((_, index) => (
+      {pokemonTeam.map((p, i) => (
         <PokemonPicker
-          key={index}
-          onPickerChange={onPickerChange(index)}
-          initialPokemon={pokemonTeam[index]?.name || ''}
-          initialTypes={pokemonTeam[index]?.moveTypes || []}
+          key={i}
+          onPickerChange={onPickerChange(i)}
+          initialPokemon={p.name}
+          initialTypes={p.moveTypes}
+          animationsEnabled={animationsEnabled}
         />
       ))}
     </div>

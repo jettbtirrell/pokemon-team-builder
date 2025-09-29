@@ -59,6 +59,38 @@ const isCounter = (attacker, defender) => {
   return hasSuperEffective && allDefenderStabsIneffective;
 };
 
+const coverageSummary = (team) => {
+  const counters = analyzePokemonCounters(team);
+  const total = Object.keys(counters).length;
+
+  let totalCountered = 0;
+  let counteredBy2 = 0;
+  let counteredBy3 = 0;
+  let counteredBy4 = 0;
+  let counteredBy5 = 0;
+  let counteredBy6 = 0;
+
+  Object.values(counters).forEach(counterList => {
+    const count = counterList.length;
+    if (count > 0) totalCountered++;
+    if (count >= 2) counteredBy2++;
+    if (count >= 3) counteredBy3++;
+    if (count >= 4) counteredBy4++;
+    if (count >= 5) counteredBy5++;
+    if (count >= 6) counteredBy6++;
+  });
+
+  return {
+    total,
+    totalCountered,
+    counteredBy2,
+    counteredBy3,
+    counteredBy4,
+    counteredBy5,
+    counteredBy6
+  };
+};
+
 const analyzePokemonCounters = (team) => {
   const result = {};
   gen5Pokemon.forEach(defender => {
@@ -177,5 +209,6 @@ export {
   effectiveness,
   isEffective,
   isCounter,
-  analyzePokemonCounters
+  analyzePokemonCounters,
+  coverageSummary
 };

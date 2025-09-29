@@ -13,6 +13,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import 'react-tooltip/dist/react-tooltip.css';
 import PokemonCoverage from '../TypeCoverage/PokemonCoverage';
 import { analyzePokemonCounters } from '../analysis';
+import CoverageSummary from "../CoverageSummary/CoverageSummary";
 
 function App() {
   const [numPickers, setNumPickers] = useState(6);
@@ -133,7 +134,7 @@ function App() {
       />
       <div className="analysis-section">
         <TypeCoverage teamSize={numPickers} pokemonTeam={filteredPokemonTeam} />
-        <Recommendations pokemonTeam={filteredPokemonTeam} teamSize={numPickers} />
+        <CoverageSummary pokemonTeam={filteredPokemonTeam} />
         <PokemonCoverage pokemonCounters={pokemonCounters} />
       </div>
       <footer className="footer">

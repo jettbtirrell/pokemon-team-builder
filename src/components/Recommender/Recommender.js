@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Recommender.css";
-import { recommendAdditions } from "../analysis";
 import pokemon from "pokemon";
+import { recommendAdditions, recommendSupportAdditions } from "../analysis";
 
 const cap = s => s.charAt(0).toUpperCase() + s.slice(1);
 
@@ -10,13 +10,17 @@ const normalizeName = (name) => {
   return name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
 };
 
-const Recommender = ({ pokemonTeam, onAddPokemon, strictCounters }) => {
+const Recommender = ({ pokemonTeam, onAddPokemon, strictCounters, supportMode }) => {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    const res = recommendAdditions(pokemonTeam, 10, strictCounters);
-    setData(res);
-  }, [pokemonTeam, strictCounters]);
+    if (supportMode) {
+      setData(recommendSupportAdditions(pokemonTeam, 10, strictCounters));
+    } else {
+      setData(recommendAdditions(pokemonTeam, 10, strictCounters));
+    }
+  }, [pokemonTeam, supportMode, strictCounters]);
+
 
 
   if (!data) return (
@@ -41,7 +45,10 @@ const Recommender = ({ pokemonTeam, onAddPokemon, strictCounters }) => {
     <div className="recommender-card">
       <h3>Recommended Additions</h3>
       <div className="rec-summary">
-        Current: {data.baseCount}/{data.total}
+        {supportMode
+          ? <>Current exploitable enemies: {data.baseScore}</>
+          : <>Current: {data.baseCount}/{data.total}</>
+        }
       </div>
       <ul className="rec-list">
         {data.results.map((r) => (
@@ -55,8 +62,12 @@ const Recommender = ({ pokemonTeam, onAddPokemon, strictCounters }) => {
             <div className="rec-meta">
               <div className="rec-name">{cap(r.name)}</div>
               <div className="rec-delta">
-                {data.baseCount}/{data.total} → {r.newCount}/{data.total} (+{r.delta})
+                {supportMode
+                  ? <>Fixes {r.fixes} ({Math.round((r.fixes / data.problemCount) * 100)}%)</>
+                  : <>{data.baseCount}/{data.total} → {r.newCount}/{data.total} (+{r.delta})</>
+                }
               </div>
+
             </div>
           </li>
         ))}
@@ -65,5 +76,6 @@ const Recommender = ({ pokemonTeam, onAddPokemon, strictCounters }) => {
     </div>
   );
 };
+
 
 export default Recommender;

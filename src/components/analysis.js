@@ -87,15 +87,29 @@ const coverageSummary = (team, strictCounters = true) => {
 const analyzePokemonCounters = (team, strictCounters = true) => {
   const result = {};
   gen5Pokemon.forEach(defender => {
-    result[defender.name] = [];
+    result[defender.name] = {
+      counters: [],
+      weaknesses: []
+    };
+
     team.forEach(attacker => {
-      if (attacker.name && isCounter(attacker, defender, strictCounters)) {
-        result[defender.name].push(attacker.name);
+      if (!attacker.name) return;
+
+      if (isCounter(attacker, defender, strictCounters)) {
+        result[defender.name].counters.push(attacker.name);
+      }
+
+      const hasSE = defender.types.some(type =>
+        effectiveness(type, attacker.pokemonTypes) > 1
+      );
+      if (hasSE) {
+        result[defender.name].weaknesses.push(attacker.name);
       }
     });
   });
   return result;
 };
+
 
 const analyzeTeam = (team) => {
   const defenderIsWeakTo = TYPES.reduce((acc, type) => {
@@ -197,13 +211,16 @@ const recommendations = (team, teamSize) => {
 const countCounteredOnce = (team, strictCounters = true) => {
   const mapping = analyzePokemonCounters(team, strictCounters);
   let count = 0;
-  Object.values(mapping).forEach(arr => { if (arr.length > 0) count++; });
+  Object.values(mapping).forEach(obj => {
+    if (obj.counters.length > 0) count++;
+  });
   return { count, total: gen5Pokemon.length, mapping };
 };
 
 const recommendAdditions = (team, topN = 10, strictCounters = true) => {
   const base = countCounteredOnce(team, strictCounters);
   const baseCount = base.count;
+
   const results = gen5Pokemon.map(p => {
     const simTeam = [...team, { name: p.name, moveTypes: p.types, pokemonTypes: p.types }];
     const sim = countCounteredOnce(simTeam, strictCounters);
@@ -214,12 +231,71 @@ const recommendAdditions = (team, topN = 10, strictCounters = true) => {
       delta: sim.count - baseCount,
       newCount: sim.count,
     };
-  }).filter(r => r.delta > 0)
-    .sort((a, b) => b.delta - a.delta)
-    .slice(0, topN);
+  })
+  .filter(r => r.delta > 0)
+  .sort((a, b) => b.delta - a.delta)
+  .slice(0, topN);
 
   return { baseCount, total: gen5Pokemon.length, results };
 };
+
+const recommendSupportAdditions = (team, topN = 10, strict = true) => {
+  const baseCounters = analyzePokemonCounters(team, strict);
+  const baseSupport = analyzeSupportThreats(team);
+
+  const problemEnemies = Object.entries(baseSupport)
+    .filter(([enemy, weakList]) =>
+      weakList.length > 0 && (!baseCounters[enemy] || baseCounters[enemy].counters.length === 0)
+    )
+    .map(([enemy]) => enemy);
+
+  const results = gen5Pokemon.map(p => {
+    const simTeam = [...team, { name: p.name, moveTypes: p.types, pokemonTypes: p.types }];
+    const simCounters = analyzePokemonCounters(simTeam, strict);
+
+    const fixes = problemEnemies.filter(enemy =>
+      simCounters[enemy] && simCounters[enemy].counters.includes(p.name)
+    ).length;
+
+    return {
+      name: p.name,
+      id: p.id,
+      sprite: p.sprite,
+      fixes,
+    };
+  })
+  .filter(r => r.fixes > 0)
+  .sort((a, b) => b.fixes - a.fixes)
+  .slice(0, topN);
+
+  return { 
+    problemCount: problemEnemies.length, 
+    results,
+    percentMitigated: problemEnemies.length > 0 
+      ? Math.round((results[0]?.fixes || 0) / problemEnemies.length * 100) 
+      : 0
+  };
+};
+
+
+const analyzeSupportThreats = (team) => {
+  const result = {};
+  gen5Pokemon.forEach(defender => {
+    result[defender.name] = [];
+    team.forEach(attacker => {
+      if (!attacker.pokemonTypes?.length) return;
+      const hasSEStab = defender.types.some(stab =>
+        effectiveness(stab, attacker.pokemonTypes) > 1
+      );
+      if (hasSEStab) result[defender.name].push(attacker.name);
+    });
+  });
+  return result;
+};
+
+
+
+
 
 export {
   analyzeTeam,
@@ -232,5 +308,6 @@ export {
   analyzePokemonCounters,
   coverageSummary,
   countCounteredOnce,
-  recommendAdditions
+  recommendAdditions,
+  recommendSupportAdditions
 };

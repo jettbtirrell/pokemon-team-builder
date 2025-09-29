@@ -45,6 +45,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: #ffffff;
 }
 
 .counter-slot.filled {
@@ -58,3 +59,40 @@
   display: block;
 }
 
+.weakness-slots {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.weakness-slot {
+  width: 48px;
+  height: 48px;
+  border: 1px solid #f99;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffe5e5;
+}
+
+.weakness-slot.empty {
+  background-color: #fff5f5;
+  border: 1px dashed #fbb;
+}
+
+.weakness-slot.filled {
+  background-color: #ffcccc;
+}
+
+.weakness-icon {
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  margin-top: -6px;
+}
+
+.pokemon-card.problem-card {
+  border: 2px solid red;
+  background: #ffe5e5;
+}

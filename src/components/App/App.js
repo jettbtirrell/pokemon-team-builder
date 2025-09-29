@@ -24,6 +24,7 @@ function App() {
   );
   const [animationsEnabled, setAnimationsEnabled] = useState(true);
   const [strictCounters, setStrictCounters] = useState(true);
+  const [supportMode, setSupportMode] = useState(true);
 
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
@@ -183,6 +184,11 @@ const handleAddPokemon = async (pokemonName, pokemonTypes = null) => {
       {strictCounters ? "Loose Counter Mode" : "Strict Counter Mode"}
     </button>
 
+    <button onClick={() => setSupportMode(prev => !prev)}>
+      {supportMode ? "Disable Support Mode" : "Enable Support Mode"}
+    </button>
+
+
 
     <div className="team-section">
       <PokemonTeam
@@ -194,12 +200,13 @@ const handleAddPokemon = async (pokemonName, pokemonTypes = null) => {
       <CoverageSummary
         pokemonTeam={filteredPokemonTeam}
         strictCounters={strictCounters}
+        supportMode={supportMode}
       />
     </div>
 
     <div className="analysis-section">
-      <Recommender pokemonTeam={filteredPokemonTeam} onAddPokemon={handleAddPokemon} strictCounters={strictCounters} />
-      <PokemonCoverage pokemonCounters={analyzePokemonCounters(filteredPokemonTeam, strictCounters)} />
+      <Recommender pokemonTeam={filteredPokemonTeam} onAddPokemon={handleAddPokemon} strictCounters={strictCounters}  supportMode={supportMode}/>
+      <PokemonCoverage pokemonCounters={analyzePokemonCounters(filteredPokemonTeam, strictCounters)} supportMode={supportMode} pokemonTeam={pokemonTeam} />
     </div>
 
     <footer className="footer">

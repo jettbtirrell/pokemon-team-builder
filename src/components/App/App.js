@@ -14,6 +14,8 @@ import 'react-tooltip/dist/react-tooltip.css';
 import PokemonCoverage from '../TypeCoverage/PokemonCoverage';
 import { analyzePokemonCounters } from '../analysis';
 import CoverageSummary from "../CoverageSummary/CoverageSummary";
+import Recommender from '../Recommender/Recommender';
+
 
 function App() {
   const [numPickers, setNumPickers] = useState(6);
@@ -140,7 +142,7 @@ function App() {
         animationsEnabled={animationsEnabled}
       />
       <div className="analysis-section">
-        <TypeCoverage teamSize={numPickers} pokemonTeam={filteredPokemonTeam} />
+        <Recommender pokemonTeam={filteredPokemonTeam} />
         <CoverageSummary pokemonTeam={filteredPokemonTeam} />
         <PokemonCoverage pokemonCounters={pokemonCounters} />
       </div>

@@ -201,6 +201,33 @@ const recommendations = (team, teamSize) => {
   return recs.length ? recs : ["None!"];
 };
 
+const countCounteredOnce = (team) => {
+  const mapping = analyzePokemonCounters(team);
+  let count = 0;
+  Object.values(mapping).forEach(arr => { if (arr.length > 0) count++; });
+  return { count, total: gen5Pokemon.length, mapping };
+};
+
+const recommendAdditions = (team, topN = 10) => {
+  const base = countCounteredOnce(team);
+  const baseCount = base.count;
+  const results = gen5Pokemon.map(p => {
+    const simTeam = [...team, { name: p.name, moveTypes: p.types, pokemonTypes: p.types }];
+    const sim = countCounteredOnce(simTeam);
+    return {
+      name: p.name,
+      id: p.id,
+      sprite: p.sprite,
+      delta: sim.count - baseCount,
+      newCount: sim.count,
+    };
+  }).filter(r => r.delta > 0)
+    .sort((a, b) => b.delta - a.delta)
+    .slice(0, topN);
+
+  return { baseCount, total: gen5Pokemon.length, results };
+};
+
 export {
   analyzeTeam,
   defendersCovered,
@@ -210,5 +237,7 @@ export {
   isEffective,
   isCounter,
   analyzePokemonCounters,
-  coverageSummary
+  coverageSummary,
+  countCounteredOnce,
+  recommendAdditions
 };

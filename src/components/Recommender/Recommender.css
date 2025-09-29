@@ -1,0 +1,51 @@
+.recommender-card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 12px 16px;
+  box-shadow: 0 1px 3px rgba(0,0,0,.08);
+}
+
+.rec-summary {
+  font-size: 14px;
+  color: #444;
+  margin-bottom: 8px;
+}
+
+.rec-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 8px;
+}
+
+.rec-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px;
+  border: 1px solid #eee;
+  border-radius: 8px;
+}
+
+.rec-sprite {
+  image-rendering: pixelated;
+  width: 56px;
+  height: 56px;
+}
+
+.rec-meta {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.rec-name {
+  font-weight: 600;
+}
+
+.rec-delta {
+  font-size: 13px;
+  color: #555;
+}

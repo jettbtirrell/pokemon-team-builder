@@ -8,9 +8,13 @@
   border: 2px solid #333;
   border-radius: 8px;
   padding: 8px;
-  width: 120px;
-  text-align: center;
-  background: #f9f9f9;
+  margin: 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: white;
+  width: 180px;
+  min-height: 220px;
 }
 
 .pokemon-card.no-counters {
@@ -29,13 +33,13 @@
 .counter-slots {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 4px;
+  gap: 6px;
   justify-items: center;
 }
 
 .counter-slot {
-  width: 32px;
-  height: 32px;
+  width: 48px;
+  height: 48px;
   border: 1px dashed #ccc;
   display: flex;
   align-items: center;
@@ -44,9 +48,12 @@
 
 .counter-slot.filled {
   border: none;
+  margin-top: -6px;
 }
 
 .counter-icon {
   image-rendering: pixelated;
   image-rendering: crisp-edges;
+  display: block;
 }
+

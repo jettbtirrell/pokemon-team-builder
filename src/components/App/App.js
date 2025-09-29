@@ -57,6 +57,46 @@ function App() {
     setPokemonTeam((prevTeam) => adjustPokemonTeam(prevTeam, newSize));
   };
 
+const handleAddPokemon = async (pokemonName, pokemonTypes = null) => {
+  if (!pokemonName) return;
+  if (pokemonTeam.filter(p => p.name !== '').length >= 6) return;
+
+  let types = pokemonTypes;
+
+  try {
+    if (!types) {
+      const pokemonId = pokemon.getId(pokemonName);
+      const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonId}`);
+      const data = await response.json();
+
+      types = data.types.map(t => t.type.name);
+
+      const pastTypes = data.past_types.find(pt => pt.generation.name === "generation-v");
+      if (pastTypes) {
+        types = pastTypes.types.map(t => t.type.name);
+      }
+    }
+  } catch (e) {
+    console.warn("Could not fetch Pokémon data for:", pokemonName, e);
+    return;
+  }
+
+  setPokemonTeam((prevTeam) => {
+    const newTeam = [...prevTeam];
+    const emptyIndex = newTeam.findIndex(p => p.name === '');
+    if (emptyIndex !== -1) {
+      newTeam[emptyIndex] = { 
+        name: pokemonName, 
+        moveTypes: types,
+        pokemonTypes: types 
+      };
+    }
+    return newTeam;
+  });
+};
+
+
+
   const handlePickerChange = (index) => async (name, moves) => {
     let pokemonTypes = [];
     if (name) {
@@ -146,7 +186,7 @@ function App() {
     </div>
 
     <div className="analysis-section">
-      <Recommender pokemonTeam={filteredPokemonTeam} />
+      <Recommender pokemonTeam={filteredPokemonTeam} onAddPokemon={handleAddPokemon} />
       <PokemonCoverage pokemonCounters={pokemonCounters} />
     </div>
 

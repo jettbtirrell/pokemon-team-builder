@@ -1,10 +1,16 @@
 import React, { useEffect, useState } from "react";
 import "./Recommender.css";
 import { recommendAdditions } from "../analysis";
+import pokemon from "pokemon";
 
 const cap = s => s.charAt(0).toUpperCase() + s.slice(1);
 
-const Recommender = ({ pokemonTeam }) => {
+const normalizeName = (name) => {
+  if (!name) return "";
+  return name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
+};
+
+const Recommender = ({ pokemonTeam, onAddPokemon }) => {
   const [data, setData] = useState(null);
 
   useEffect(() => {
@@ -19,6 +25,17 @@ const Recommender = ({ pokemonTeam }) => {
     </div>
   );
 
+  const handleClick = (name) => {
+    try {
+      const normName = normalizeName(name);
+      const id = pokemon.getId(normName);
+      if (!id) return;
+      if (onAddPokemon) onAddPokemon(normName);
+    } catch (e) {
+      console.warn(`Could not add Pokémon: ${name}`, e);
+    }
+  };
+
   return (
     <div className="recommender-card">
       <h3>Recommended Additions</h3>
@@ -27,7 +44,12 @@ const Recommender = ({ pokemonTeam }) => {
       </div>
       <ul className="rec-list">
         {data.results.map((r) => (
-          <li key={r.id} className="rec-item">
+          <li
+            key={r.id}
+            className="rec-item"
+            onClick={() => handleClick(r.name)}
+            style={{ cursor: "pointer" }}
+          >
             <img src={r.sprite} alt={r.name} className="rec-sprite" />
             <div className="rec-meta">
               <div className="rec-name">{cap(r.name)}</div>

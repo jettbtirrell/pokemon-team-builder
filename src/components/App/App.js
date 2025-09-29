@@ -126,51 +126,56 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <h1 className="mb-3">Pokémon Gen II-V Team Builder</h1>
-      <button
-        onClick={() => setAnimationsEnabled((prev) => !prev)}
-        className="toggle-animations-btn"
-      >
-        {animationsEnabled ? "Disable Animations" : "Enable Animations"}
-      </button>
-      <Slider className="mb-3" value={numPickers} onChange={handleSliderChange} />
+  <div className="App">
+    <h1 className="mb-3">Pokémon Gen II-V Team Builder</h1>
+    <button
+      onClick={() => setAnimationsEnabled((prev) => !prev)}
+      className="toggle-animations-btn"
+    >
+      {animationsEnabled ? "Disable Animations" : "Enable Animations"}
+    </button>
+
+    <div className="team-section">
       <PokemonTeam
         numPickers={numPickers}
         onPickerChange={handlePickerChange}
         pokemonTeam={pokemonTeam}
         animationsEnabled={animationsEnabled}
       />
-      <div className="analysis-section">
-        <Recommender pokemonTeam={filteredPokemonTeam} />
-        <CoverageSummary pokemonTeam={filteredPokemonTeam} />
-        <PokemonCoverage pokemonCounters={pokemonCounters} />
-      </div>
-      <footer className="footer">
-        <div className="copy-link-container">
-          <button
-            className="copy-link-button"
-            onClick={copyToClipboard}
-            data-tooltip-id="copyTooltip"
-          >
-            <FontAwesomeIcon icon={faLink} />
-          </button>
-          <Tooltip id="copyTooltip" place="top" effect="solid">
-            Copy link to team
-          </Tooltip>
-        </div>
-        Made by{' '}
-        <a
-          href="https://kellenvu.github.io/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Kellen Vu
-        </a>
-      </footer>
-      <ToastContainer />
+      <CoverageSummary pokemonTeam={filteredPokemonTeam} />
     </div>
-  );
+
+    <div className="analysis-section">
+      <Recommender pokemonTeam={filteredPokemonTeam} />
+      <PokemonCoverage pokemonCounters={pokemonCounters} />
+    </div>
+
+    <footer className="footer">
+      <div className="copy-link-container">
+        <button
+          className="copy-link-button"
+          onClick={copyToClipboard}
+          data-tooltip-id="copyTooltip"
+        >
+          <FontAwesomeIcon icon={faLink} />
+        </button>
+        <Tooltip id="copyTooltip" place="top" effect="solid">
+          Copy link to team
+        </Tooltip>
+      </div>
+      Made by{" "}
+      <a
+        href="https://kellenvu.github.io/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Kellen Vu
+      </a>
+    </footer>
+    <ToastContainer />
+  </div>
+);
+
 }
 
 export default App;

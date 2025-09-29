@@ -1,6 +1,7 @@
 .pokemon-picker {
   padding: 10px;
   max-width: 200px;
+  height: 500px;
   border-radius: 5px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
   text-align: center;

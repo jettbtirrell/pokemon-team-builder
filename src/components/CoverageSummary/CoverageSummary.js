@@ -14,8 +14,8 @@ const CoverageSummary = ({ pokemonTeam }) => {
   const summary = coverageSummary(pokemonTeam);
 
   return (
-    <div className="coverage-summary">
-      <h3>Coverage Summary</h3>
+  <div className="counter-summary">
+    <h3>Counter Summary</h3>
       <p>{summary.totalCountered} out of {summary.total} Pokémon are countered</p>
       <p>{summary.counteredBy2} countered by 2 or more</p>
       <p>{summary.counteredBy3} countered by 3 or more</p>

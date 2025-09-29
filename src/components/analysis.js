@@ -44,9 +44,19 @@ const isEffective = (attackType, attackerTypes, defenderType) => {
 };
 
 const isCounter = (attacker, defender) => {
-  return attacker.moveTypes.some(moveType =>
+  if (!attacker.moveTypes?.length || !attacker.pokemonTypes?.length) return false;
+
+  const hasSuperEffective = attacker.moveTypes.some(moveType =>
     effectiveness(moveType, defender.types) > 1
   );
+
+  if (!hasSuperEffective) return false;
+
+  const allDefenderStabsIneffective = defender.types.every(stab =>
+    effectiveness(stab, attacker.pokemonTypes) < 1
+  );
+
+  return hasSuperEffective && allDefenderStabsIneffective;
 };
 
 const analyzePokemonCounters = (team) => {

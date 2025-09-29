@@ -10,6 +10,10 @@
   margin: 0 20px 0 20px;
 }
 
+.pokemon-coverage {
+  grid-column: span 2;
+}
+
 @media (max-width: 768px) {
   .analysis-section {
     grid-template-columns: 1fr;

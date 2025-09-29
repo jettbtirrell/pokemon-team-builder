@@ -1,0 +1,1470 @@
+[
+  {
+    "id": 495,
+    "name": "snivy",
+    "types": [
+      "grass"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/495.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/snivy.png"
+  },
+  {
+    "id": 496,
+    "name": "servine",
+    "types": [
+      "grass"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/496.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/servine.png"
+  },
+  {
+    "id": 497,
+    "name": "serperior",
+    "types": [
+      "grass"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/497.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/serperior.png"
+  },
+  {
+    "id": 498,
+    "name": "tepig",
+    "types": [
+      "fire"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/498.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/tepig.png"
+  },
+  {
+    "id": 499,
+    "name": "pignite",
+    "types": [
+      "fire",
+      "fighting"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/499.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/pignite.png"
+  },
+  {
+    "id": 500,
+    "name": "emboar",
+    "types": [
+      "fire",
+      "fighting"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/500.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/emboar.png"
+  },
+  {
+    "id": 501,
+    "name": "oshawott",
+    "types": [
+      "water"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/501.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/oshawott.png"
+  },
+  {
+    "id": 502,
+    "name": "dewott",
+    "types": [
+      "water"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/502.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/dewott.png"
+  },
+  {
+    "id": 503,
+    "name": "samurott",
+    "types": [
+      "water"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/503.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/samurott.png"
+  },
+  {
+    "id": 504,
+    "name": "patrat",
+    "types": [
+      "normal"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/504.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/patrat.png"
+  },
+  {
+    "id": 505,
+    "name": "watchog",
+    "types": [
+      "normal"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/505.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/watchog.png"
+  },
+  {
+    "id": 506,
+    "name": "lillipup",
+    "types": [
+      "normal"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/506.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/lillipup.png"
+  },
+  {
+    "id": 507,
+    "name": "herdier",
+    "types": [
+      "normal"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/507.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/herdier.png"
+  },
+  {
+    "id": 508,
+    "name": "stoutland",
+    "types": [
+      "normal"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/508.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/stoutland.png"
+  },
+  {
+    "id": 509,
+    "name": "purrloin",
+    "types": [
+      "dark"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/509.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/purrloin.png"
+  },
+  {
+    "id": 510,
+    "name": "liepard",
+    "types": [
+      "dark"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/510.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/liepard.png"
+  },
+  {
+    "id": 511,
+    "name": "pansage",
+    "types": [
+      "grass"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/511.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/pansage.png"
+  },
+  {
+    "id": 512,
+    "name": "simisage",
+    "types": [
+      "grass"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/512.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/simisage.png"
+  },
+  {
+    "id": 513,
+    "name": "pansear",
+    "types": [
+      "fire"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/513.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/pansear.png"
+  },
+  {
+    "id": 514,
+    "name": "simisear",
+    "types": [
+      "fire"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/514.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/simisear.png"
+  },
+  {
+    "id": 515,
+    "name": "panpour",
+    "types": [
+      "water"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/515.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/panpour.png"
+  },
+  {
+    "id": 516,
+    "name": "simipour",
+    "types": [
+      "water"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/516.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/simipour.png"
+  },
+  {
+    "id": 517,
+    "name": "munna",
+    "types": [
+      "psychic"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/517.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/munna.png"
+  },
+  {
+    "id": 518,
+    "name": "musharna",
+    "types": [
+      "psychic"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/518.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/musharna.png"
+  },
+  {
+    "id": 519,
+    "name": "pidove",
+    "types": [
+      "normal",
+      "flying"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/519.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/pidove.png"
+  },
+  {
+    "id": 520,
+    "name": "tranquill",
+    "types": [
+      "normal",
+      "flying"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/520.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/tranquill.png"
+  },
+  {
+    "id": 521,
+    "name": "unfezant",
+    "types": [
+      "normal",
+      "flying"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/521.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/unfezant.png"
+  },
+  {
+    "id": 522,
+    "name": "blitzle",
+    "types": [
+      "electric"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/522.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/blitzle.png"
+  },
+  {
+    "id": 523,
+    "name": "zebstrika",
+    "types": [
+      "electric"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/523.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/zebstrika.png"
+  },
+  {
+    "id": 524,
+    "name": "roggenrola",
+    "types": [
+      "rock"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/524.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/roggenrola.png"
+  },
+  {
+    "id": 525,
+    "name": "boldore",
+    "types": [
+      "rock"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/525.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/boldore.png"
+  },
+  {
+    "id": 526,
+    "name": "gigalith",
+    "types": [
+      "rock"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/526.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/gigalith.png"
+  },
+  {
+    "id": 527,
+    "name": "woobat",
+    "types": [
+      "psychic",
+      "flying"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/527.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/woobat.png"
+  },
+  {
+    "id": 528,
+    "name": "swoobat",
+    "types": [
+      "psychic",
+      "flying"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/528.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/swoobat.png"
+  },
+  {
+    "id": 529,
+    "name": "drilbur",
+    "types": [
+      "ground"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/529.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/drilbur.png"
+  },
+  {
+    "id": 530,
+    "name": "excadrill",
+    "types": [
+      "ground",
+      "steel"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/530.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/excadrill.png"
+  },
+  {
+    "id": 531,
+    "name": "audino",
+    "types": [
+      "normal"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/531.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/audino.png"
+  },
+  {
+    "id": 532,
+    "name": "timburr",
+    "types": [
+      "fighting"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/532.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/timburr.png"
+  },
+  {
+    "id": 533,
+    "name": "gurdurr",
+    "types": [
+      "fighting"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/533.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/gurdurr.png"
+  },
+  {
+    "id": 534,
+    "name": "conkeldurr",
+    "types": [
+      "fighting"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/534.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/conkeldurr.png"
+  },
+  {
+    "id": 535,
+    "name": "tympole",
+    "types": [
+      "water"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/535.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/tympole.png"
+  },
+  {
+    "id": 536,
+    "name": "palpitoad",
+    "types": [
+      "water",
+      "ground"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/536.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/palpitoad.png"
+  },
+  {
+    "id": 537,
+    "name": "seismitoad",
+    "types": [
+      "water",
+      "ground"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/537.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/seismitoad.png"
+  },
+  {
+    "id": 538,
+    "name": "throh",
+    "types": [
+      "fighting"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/538.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/throh.png"
+  },
+  {
+    "id": 539,
+    "name": "sawk",
+    "types": [
+      "fighting"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/539.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/sawk.png"
+  },
+  {
+    "id": 540,
+    "name": "sewaddle",
+    "types": [
+      "bug",
+      "grass"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/540.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/sewaddle.png"
+  },
+  {
+    "id": 541,
+    "name": "swadloon",
+    "types": [
+      "bug",
+      "grass"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/541.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/swadloon.png"
+  },
+  {
+    "id": 542,
+    "name": "leavanny",
+    "types": [
+      "bug",
+      "grass"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/542.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/leavanny.png"
+  },
+  {
+    "id": 543,
+    "name": "venipede",
+    "types": [
+      "bug",
+      "poison"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/543.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/venipede.png"
+  },
+  {
+    "id": 544,
+    "name": "whirlipede",
+    "types": [
+      "bug",
+      "poison"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/544.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/whirlipede.png"
+  },
+  {
+    "id": 545,
+    "name": "scolipede",
+    "types": [
+      "bug",
+      "poison"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/545.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/scolipede.png"
+  },
+  {
+    "id": 546,
+    "name": "cottonee",
+    "types": [
+      "grass",
+      "fairy"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/546.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/cottonee.png"
+  },
+  {
+    "id": 547,
+    "name": "whimsicott",
+    "types": [
+      "grass",
+      "fairy"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/547.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/whimsicott.png"
+  },
+  {
+    "id": 548,
+    "name": "petilil",
+    "types": [
+      "grass"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/548.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/petilil.png"
+  },
+  {
+    "id": 549,
+    "name": "lilligant",
+    "types": [
+      "grass"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/549.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/lilligant.png"
+  },
+  {
+    "id": 550,
+    "name": "basculin-red-striped",
+    "types": [
+      "water"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/550.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/basculin-red-striped.png"
+  },
+  {
+    "id": 551,
+    "name": "sandile",
+    "types": [
+      "ground",
+      "dark"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/551.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/sandile.png"
+  },
+  {
+    "id": 552,
+    "name": "krokorok",
+    "types": [
+      "ground",
+      "dark"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/552.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/krokorok.png"
+  },
+  {
+    "id": 553,
+    "name": "krookodile",
+    "types": [
+      "ground",
+      "dark"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/553.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/krookodile.png"
+  },
+  {
+    "id": 554,
+    "name": "darumaka",
+    "types": [
+      "fire"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/554.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/darumaka.png"
+  },
+  {
+    "id": 555,
+    "name": "darmanitan-standard",
+    "types": [
+      "fire"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/555.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/darmanitan-standard.png"
+  },
+  {
+    "id": 556,
+    "name": "maractus",
+    "types": [
+      "grass"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/556.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/maractus.png"
+  },
+  {
+    "id": 557,
+    "name": "dwebble",
+    "types": [
+      "bug",
+      "rock"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/557.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/dwebble.png"
+  },
+  {
+    "id": 558,
+    "name": "crustle",
+    "types": [
+      "bug",
+      "rock"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/558.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/crustle.png"
+  },
+  {
+    "id": 559,
+    "name": "scraggy",
+    "types": [
+      "dark",
+      "fighting"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/559.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/scraggy.png"
+  },
+  {
+    "id": 560,
+    "name": "scrafty",
+    "types": [
+      "dark",
+      "fighting"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/560.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/scrafty.png"
+  },
+  {
+    "id": 561,
+    "name": "sigilyph",
+    "types": [
+      "psychic",
+      "flying"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/561.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/sigilyph.png"
+  },
+  {
+    "id": 562,
+    "name": "yamask",
+    "types": [
+      "ghost"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/562.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/yamask.png"
+  },
+  {
+    "id": 563,
+    "name": "cofagrigus",
+    "types": [
+      "ghost"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/563.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/cofagrigus.png"
+  },
+  {
+    "id": 564,
+    "name": "tirtouga",
+    "types": [
+      "water",
+      "rock"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/564.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/tirtouga.png"
+  },
+  {
+    "id": 565,
+    "name": "carracosta",
+    "types": [
+      "water",
+      "rock"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/565.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/carracosta.png"
+  },
+  {
+    "id": 566,
+    "name": "archen",
+    "types": [
+      "rock",
+      "flying"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/566.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/archen.png"
+  },
+  {
+    "id": 567,
+    "name": "archeops",
+    "types": [
+      "rock",
+      "flying"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/567.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/archeops.png"
+  },
+  {
+    "id": 568,
+    "name": "trubbish",
+    "types": [
+      "poison"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/568.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/trubbish.png"
+  },
+  {
+    "id": 569,
+    "name": "garbodor",
+    "types": [
+      "poison"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/569.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/garbodor.png"
+  },
+  {
+    "id": 570,
+    "name": "zorua",
+    "types": [
+      "dark"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/570.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/zorua.png"
+  },
+  {
+    "id": 571,
+    "name": "zoroark",
+    "types": [
+      "dark"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/571.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/zoroark.png"
+  },
+  {
+    "id": 572,
+    "name": "minccino",
+    "types": [
+      "normal"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/572.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/minccino.png"
+  },
+  {
+    "id": 573,
+    "name": "cinccino",
+    "types": [
+      "normal"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/573.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/cinccino.png"
+  },
+  {
+    "id": 574,
+    "name": "gothita",
+    "types": [
+      "psychic"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/574.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/gothita.png"
+  },
+  {
+    "id": 575,
+    "name": "gothorita",
+    "types": [
+      "psychic"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/575.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/gothorita.png"
+  },
+  {
+    "id": 576,
+    "name": "gothitelle",
+    "types": [
+      "psychic"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/576.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/gothitelle.png"
+  },
+  {
+    "id": 577,
+    "name": "solosis",
+    "types": [
+      "psychic"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/577.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/solosis.png"
+  },
+  {
+    "id": 578,
+    "name": "duosion",
+    "types": [
+      "psychic"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/578.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/duosion.png"
+  },
+  {
+    "id": 579,
+    "name": "reuniclus",
+    "types": [
+      "psychic"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/579.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/reuniclus.png"
+  },
+  {
+    "id": 580,
+    "name": "ducklett",
+    "types": [
+      "water",
+      "flying"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/580.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/ducklett.png"
+  },
+  {
+    "id": 581,
+    "name": "swanna",
+    "types": [
+      "water",
+      "flying"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/581.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/swanna.png"
+  },
+  {
+    "id": 582,
+    "name": "vanillite",
+    "types": [
+      "ice"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/582.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/vanillite.png"
+  },
+  {
+    "id": 583,
+    "name": "vanillish",
+    "types": [
+      "ice"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/583.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/vanillish.png"
+  },
+  {
+    "id": 584,
+    "name": "vanilluxe",
+    "types": [
+      "ice"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/584.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/vanilluxe.png"
+  },
+  {
+    "id": 585,
+    "name": "deerling",
+    "types": [
+      "normal",
+      "grass"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/585.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/deerling.png"
+  },
+  {
+    "id": 586,
+    "name": "sawsbuck",
+    "types": [
+      "normal",
+      "grass"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/586.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/sawsbuck.png"
+  },
+  {
+    "id": 587,
+    "name": "emolga",
+    "types": [
+      "electric",
+      "flying"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/587.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/emolga.png"
+  },
+  {
+    "id": 588,
+    "name": "karrablast",
+    "types": [
+      "bug"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/588.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/karrablast.png"
+  },
+  {
+    "id": 589,
+    "name": "escavalier",
+    "types": [
+      "bug",
+      "steel"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/589.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/escavalier.png"
+  },
+  {
+    "id": 590,
+    "name": "foongus",
+    "types": [
+      "grass",
+      "poison"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/590.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/foongus.png"
+  },
+  {
+    "id": 591,
+    "name": "amoonguss",
+    "types": [
+      "grass",
+      "poison"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/591.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/amoonguss.png"
+  },
+  {
+    "id": 592,
+    "name": "frillish",
+    "types": [
+      "water",
+      "ghost"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/592.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/frillish.png"
+  },
+  {
+    "id": 593,
+    "name": "jellicent",
+    "types": [
+      "water",
+      "ghost"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/593.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/jellicent.png"
+  },
+  {
+    "id": 594,
+    "name": "alomomola",
+    "types": [
+      "water"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/594.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/alomomola.png"
+  },
+  {
+    "id": 595,
+    "name": "joltik",
+    "types": [
+      "bug",
+      "electric"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/595.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/joltik.png"
+  },
+  {
+    "id": 596,
+    "name": "galvantula",
+    "types": [
+      "bug",
+      "electric"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/596.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/galvantula.png"
+  },
+  {
+    "id": 597,
+    "name": "ferroseed",
+    "types": [
+      "grass",
+      "steel"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/597.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/ferroseed.png"
+  },
+  {
+    "id": 598,
+    "name": "ferrothorn",
+    "types": [
+      "grass",
+      "steel"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/598.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/ferrothorn.png"
+  },
+  {
+    "id": 599,
+    "name": "klink",
+    "types": [
+      "steel"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/599.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/klink.png"
+  },
+  {
+    "id": 600,
+    "name": "klang",
+    "types": [
+      "steel"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/600.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/klang.png"
+  },
+  {
+    "id": 601,
+    "name": "klinklang",
+    "types": [
+      "steel"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/601.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/klinklang.png"
+  },
+  {
+    "id": 602,
+    "name": "tynamo",
+    "types": [
+      "electric"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/602.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/tynamo.png"
+  },
+  {
+    "id": 603,
+    "name": "eelektrik",
+    "types": [
+      "electric"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/603.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/eelektrik.png"
+  },
+  {
+    "id": 604,
+    "name": "eelektross",
+    "types": [
+      "electric"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/604.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/eelektross.png"
+  },
+  {
+    "id": 605,
+    "name": "elgyem",
+    "types": [
+      "psychic"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/605.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/elgyem.png"
+  },
+  {
+    "id": 606,
+    "name": "beheeyem",
+    "types": [
+      "psychic"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/606.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/beheeyem.png"
+  },
+  {
+    "id": 607,
+    "name": "litwick",
+    "types": [
+      "ghost",
+      "fire"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/607.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/litwick.png"
+  },
+  {
+    "id": 608,
+    "name": "lampent",
+    "types": [
+      "ghost",
+      "fire"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/608.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/lampent.png"
+  },
+  {
+    "id": 609,
+    "name": "chandelure",
+    "types": [
+      "ghost",
+      "fire"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/609.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/chandelure.png"
+  },
+  {
+    "id": 610,
+    "name": "axew",
+    "types": [
+      "dragon"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/610.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/axew.png"
+  },
+  {
+    "id": 611,
+    "name": "fraxure",
+    "types": [
+      "dragon"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/611.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/fraxure.png"
+  },
+  {
+    "id": 612,
+    "name": "haxorus",
+    "types": [
+      "dragon"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/612.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/haxorus.png"
+  },
+  {
+    "id": 613,
+    "name": "cubchoo",
+    "types": [
+      "ice"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/613.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/cubchoo.png"
+  },
+  {
+    "id": 614,
+    "name": "beartic",
+    "types": [
+      "ice"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/614.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/beartic.png"
+  },
+  {
+    "id": 615,
+    "name": "cryogonal",
+    "types": [
+      "ice"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/615.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/cryogonal.png"
+  },
+  {
+    "id": 616,
+    "name": "shelmet",
+    "types": [
+      "bug"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/616.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/shelmet.png"
+  },
+  {
+    "id": 617,
+    "name": "accelgor",
+    "types": [
+      "bug"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/617.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/accelgor.png"
+  },
+  {
+    "id": 618,
+    "name": "stunfisk",
+    "types": [
+      "ground",
+      "electric"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/618.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/stunfisk.png"
+  },
+  {
+    "id": 619,
+    "name": "mienfoo",
+    "types": [
+      "fighting"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/619.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/mienfoo.png"
+  },
+  {
+    "id": 620,
+    "name": "mienshao",
+    "types": [
+      "fighting"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/620.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/mienshao.png"
+  },
+  {
+    "id": 621,
+    "name": "druddigon",
+    "types": [
+      "dragon"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/621.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/druddigon.png"
+  },
+  {
+    "id": 622,
+    "name": "golett",
+    "types": [
+      "ground",
+      "ghost"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/622.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/golett.png"
+  },
+  {
+    "id": 623,
+    "name": "golurk",
+    "types": [
+      "ground",
+      "ghost"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/623.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/golurk.png"
+  },
+  {
+    "id": 624,
+    "name": "pawniard",
+    "types": [
+      "dark",
+      "steel"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/624.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/pawniard.png"
+  },
+  {
+    "id": 625,
+    "name": "bisharp",
+    "types": [
+      "dark",
+      "steel"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/625.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/bisharp.png"
+  },
+  {
+    "id": 626,
+    "name": "bouffalant",
+    "types": [
+      "normal"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/626.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/bouffalant.png"
+  },
+  {
+    "id": 627,
+    "name": "rufflet",
+    "types": [
+      "normal",
+      "flying"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/627.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/rufflet.png"
+  },
+  {
+    "id": 628,
+    "name": "braviary",
+    "types": [
+      "normal",
+      "flying"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/628.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/braviary.png"
+  },
+  {
+    "id": 629,
+    "name": "vullaby",
+    "types": [
+      "dark",
+      "flying"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/629.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/vullaby.png"
+  },
+  {
+    "id": 630,
+    "name": "mandibuzz",
+    "types": [
+      "dark",
+      "flying"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/630.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/mandibuzz.png"
+  },
+  {
+    "id": 631,
+    "name": "heatmor",
+    "types": [
+      "fire"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/631.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/heatmor.png"
+  },
+  {
+    "id": 632,
+    "name": "durant",
+    "types": [
+      "bug",
+      "steel"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/632.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/durant.png"
+  },
+  {
+    "id": 633,
+    "name": "deino",
+    "types": [
+      "dark",
+      "dragon"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/633.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/deino.png"
+  },
+  {
+    "id": 634,
+    "name": "zweilous",
+    "types": [
+      "dark",
+      "dragon"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/634.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/zweilous.png"
+  },
+  {
+    "id": 635,
+    "name": "hydreigon",
+    "types": [
+      "dark",
+      "dragon"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/635.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/hydreigon.png"
+  },
+  {
+    "id": 636,
+    "name": "larvesta",
+    "types": [
+      "bug",
+      "fire"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/636.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/larvesta.png"
+  },
+  {
+    "id": 637,
+    "name": "volcarona",
+    "types": [
+      "bug",
+      "fire"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/637.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/volcarona.png"
+  },
+  {
+    "id": 638,
+    "name": "cobalion",
+    "types": [
+      "steel",
+      "fighting"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/638.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/cobalion.png"
+  },
+  {
+    "id": 639,
+    "name": "terrakion",
+    "types": [
+      "rock",
+      "fighting"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/639.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/terrakion.png"
+  },
+  {
+    "id": 640,
+    "name": "virizion",
+    "types": [
+      "grass",
+      "fighting"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/640.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/virizion.png"
+  },
+  {
+    "id": 641,
+    "name": "tornadus-incarnate",
+    "types": [
+      "flying"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/641.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/tornadus-incarnate.png"
+  },
+  {
+    "id": 642,
+    "name": "thundurus-incarnate",
+    "types": [
+      "electric",
+      "flying"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/642.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/thundurus-incarnate.png"
+  },
+  {
+    "id": 643,
+    "name": "reshiram",
+    "types": [
+      "dragon",
+      "fire"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/643.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/reshiram.png"
+  },
+  {
+    "id": 644,
+    "name": "zekrom",
+    "types": [
+      "dragon",
+      "electric"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/644.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/zekrom.png"
+  },
+  {
+    "id": 645,
+    "name": "landorus-incarnate",
+    "types": [
+      "ground",
+      "flying"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/645.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/landorus-incarnate.png"
+  },
+  {
+    "id": 646,
+    "name": "kyurem",
+    "types": [
+      "dragon",
+      "ice"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/646.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/kyurem.png"
+  },
+  {
+    "id": 647,
+    "name": "keldeo-ordinary",
+    "types": [
+      "water",
+      "fighting"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/647.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/keldeo-ordinary.png"
+  },
+  {
+    "id": 648,
+    "name": "meloetta-aria",
+    "types": [
+      "normal",
+      "psychic"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/648.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/meloetta-aria.png"
+  },
+  {
+    "id": 649,
+    "name": "genesect",
+    "types": [
+      "bug",
+      "steel"
+    ],
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/649.png",
+    "icon": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/genesect.png"
+  }
+]

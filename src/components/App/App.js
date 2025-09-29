@@ -11,10 +11,14 @@ import { Tooltip } from 'react-tooltip';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import 'react-tooltip/dist/react-tooltip.css';
+import PokemonCoverage from '../TypeCoverage/PokemonCoverage';
+import { analyzePokemonCounters } from '../analysis';
 
 function App() {
   const [numPickers, setNumPickers] = useState(6);
-  const [pokemonTeam, setPokemonTeam] = useState(Array(6).fill({ name: '', moveTypes: [], pokemonTypes: [] }));
+  const [pokemonTeam, setPokemonTeam] = useState(
+    Array(6).fill({ name: '', moveTypes: [], pokemonTypes: [] })
+  );
 
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
@@ -32,7 +36,7 @@ function App() {
   }, []);
 
   useEffect(() => {
-    const url = generateURL();
+    generateURL();
   }, [numPickers, pokemonTeam]);
 
   const adjustPokemonTeam = (team, size) => {
@@ -55,11 +59,13 @@ function App() {
       const pokemonId = pokemon.getId(name);
       const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonId}`);
       const data = await response.json();
-      pokemonTypes = data.types.map(typeInfo => typeInfo.type.name);
+      pokemonTypes = data.types.map((typeInfo) => typeInfo.type.name);
 
-      const pastTypes = data.past_types.find(pt => pt.generation.name === 'generation-v');
+      const pastTypes = data.past_types.find(
+        (pt) => pt.generation.name === 'generation-v'
+      );
       if (pastTypes) {
-        pokemonTypes = pastTypes.types.map(typeInfo => typeInfo.type.name);
+        pokemonTypes = pastTypes.types.map((typeInfo) => typeInfo.type.name);
       }
     }
 
@@ -71,17 +77,22 @@ function App() {
   };
 
   const filteredPokemonTeam = pokemonTeam
-    .filter(pokemon => pokemon.name !== '')
-    .reduce((acc, pokemon, index, array) => {
-      const nameCount = array.filter(p => p.name === pokemon.name).length;
+    .filter((p) => p.name !== '')
+    .reduce((acc, p, index, array) => {
+      const nameCount = array.filter((x) => x.name === p.name).length;
       if (nameCount > 1) {
-        const sameNameIndex = array.slice(0, index + 1).filter(p => p.name === pokemon.name).length;
-        acc.push({ ...pokemon, name: `${pokemon.name} ${sameNameIndex}` });
+        const sameNameIndex = array
+          .slice(0, index + 1)
+          .filter((x) => x.name === p.name).length;
+        acc.push({ ...p, name: `${p.name} ${sameNameIndex}` });
       } else {
-        acc.push(pokemon);
+        acc.push(p);
       }
       return acc;
     }, []);
+
+
+  const pokemonCounters = analyzePokemonCounters(filteredPokemonTeam);
 
   const generateURL = () => {
     const params = new URLSearchParams();
@@ -94,7 +105,7 @@ function App() {
     const url = generateURL();
     navigator.clipboard.writeText(url).then(() => {
       toast('Copied!', {
-        position: "top-center",
+        position: 'top-center',
         autoClose: 1000,
         hideProgressBar: true,
         closeOnClick: false,
@@ -109,16 +120,21 @@ function App() {
         closeButton: false,
       });
     });
-  };  
+  };
 
   return (
     <div className="App">
       <h1 className="mb-3">Pokémon Gen II-V Team Builder</h1>
       <Slider className="mb-3" value={numPickers} onChange={handleSliderChange} />
-      <PokemonTeam numPickers={numPickers} onPickerChange={handlePickerChange} pokemonTeam={pokemonTeam} />
+      <PokemonTeam
+        numPickers={numPickers}
+        onPickerChange={handlePickerChange}
+        pokemonTeam={pokemonTeam}
+      />
       <div className="analysis-section">
         <TypeCoverage teamSize={numPickers} pokemonTeam={filteredPokemonTeam} />
         <Recommendations pokemonTeam={filteredPokemonTeam} teamSize={numPickers} />
+        <PokemonCoverage pokemonCounters={pokemonCounters} />
       </div>
       <footer className="footer">
         <div className="copy-link-container">
@@ -133,7 +149,14 @@ function App() {
             Copy link to team
           </Tooltip>
         </div>
-        Made by <a href="https://kellenvu.github.io/" target="_blank" rel="noopener noreferrer">Kellen Vu</a>
+        Made by{' '}
+        <a
+          href="https://kellenvu.github.io/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Kellen Vu
+        </a>
       </footer>
       <ToastContainer />
     </div>

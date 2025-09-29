@@ -4,6 +4,7 @@ import pokemon from 'pokemon';
 import './PokemonPicker.css';
 import TypesList from './TypesList/TypesList';
 import TypeIcon from '../../TypeIcon/TypeIcon';
+import { isCounter } from '../../analysis';
 
 const PokemonPicker = ({ onPickerChange, initialPokemon, initialTypes }) => {
   const [selectedPokemon, setSelectedPokemon] = useState(initialPokemon ? { label: initialPokemon, value: initialPokemon } : null);
@@ -11,12 +12,52 @@ const PokemonPicker = ({ onPickerChange, initialPokemon, initialTypes }) => {
   const [pokemonTypes, setPokemonTypes] = useState([]);
   const [isShiny, setIsShiny] = useState(false);
   const [pokemonSprites, setPokemonSprites] = useState({ normal: '', shiny: '' });
-
+  const [gen5Pokemon, setGen5Pokemon] = useState([]);
+  const [counters, setCounters] = useState([]);
 
   const pokemonOptions = pokemon.all().slice(0, 649).sort().map((name) => ({
     label: name,
     value: name,
   }));
+
+
+  useEffect(() => {
+    const fetchGen5Pokemon = async () => {
+      try {
+        const res = await fetch("https://pokeapi.co/api/v2/generation/5");
+        const data = await res.json();
+
+        const details = await Promise.all(
+          data.pokemon_species.map(async (species) => {
+            const pokeRes = await fetch(`https://pokeapi.co/api/v2/pokemon/${species.name}`);
+            const pokeData = await pokeRes.json();
+            return {
+              name: pokeData.name,
+              types: pokeData.types.map(t => t.type.name),
+            };
+          })
+        );
+
+        setGen5Pokemon(details);
+      } catch (err) {
+        console.error("Error fetching Gen V Pokémon:", err);
+      }
+    };
+
+    fetchGen5Pokemon();
+  }, []);
+
+
+  useEffect(() => {
+    if (pokemonTypes.length && gen5Pokemon.length) {
+      const foundCounters = gen5Pokemon
+        .filter(enemy => selectedPokemon && enemy.name !== selectedPokemon.value.toLowerCase())
+        .filter(enemy => isCounter(pokemonTypes, enemy.types));
+      setCounters(foundCounters);
+    } else {
+      setCounters([]);
+    }
+  }, [pokemonTypes, gen5Pokemon, selectedPokemon]);
 
   useEffect(() => {
     if (initialPokemon) {
@@ -51,9 +92,7 @@ const PokemonPicker = ({ onPickerChange, initialPokemon, initialTypes }) => {
   };
 
   const fetchPokemonData = async (name) => {
-    if (!name) {
-      return; // Do nothing if the name is empty
-    }
+    if (!name) return;
 
     try {
       const pokemonId = pokemon.getId(name);
@@ -62,11 +101,8 @@ const PokemonPicker = ({ onPickerChange, initialPokemon, initialTypes }) => {
 
       const gen5Animated = data.sprites?.versions?.["generation-v"]?.["black-white"]?.animated;
 
-      const normalSprite =
-        gen5Animated?.front_default || data.sprites.front_default;
-
-      const shinySprite =
-        gen5Animated?.front_shiny || data.sprites.front_shiny;
+      const normalSprite = gen5Animated?.front_default || data.sprites.front_default;
+      const shinySprite = gen5Animated?.front_shiny || data.sprites.front_shiny;
 
       setPokemonSprites({ normal: normalSprite, shiny: shinySprite });
 
@@ -95,11 +131,13 @@ const PokemonPicker = ({ onPickerChange, initialPokemon, initialTypes }) => {
         isClearable
         placeholder="Select"
       />
+
       <div className="pokemon-types">
         {pokemonTypes.map(type => (
           <TypeIcon key={type} type={type} />
         ))}
       </div>
+
       <div className="pokemon-image-box">
         {pokemonSprites.normal && (
           <>
@@ -112,7 +150,7 @@ const PokemonPicker = ({ onPickerChange, initialPokemon, initialTypes }) => {
             {pokemonSprites.shiny && (
               <button
                 className="shiny-toggle"
-                onClick={() => {console.log("clicked, new state:", !isShiny); setIsShiny((prev) => !prev)}}
+                onClick={() => setIsShiny((prev) => !prev)}
               >
                 {isShiny ? '⚪ Normal' : '🌟 Shiny'}
               </button>
@@ -120,8 +158,20 @@ const PokemonPicker = ({ onPickerChange, initialPokemon, initialTypes }) => {
           </>
         )}
       </div>
-      <p className="">Damaging Moves:</p>
+
+      <p>Damaging Moves:</p>
       <TypesList selectedTypes={selectedTypes} onTypeToggle={handleTypeToggle} />
+
+      {counters.length > 0 && (
+        <>
+          <p>Counters:</p>
+          <ul className="counters-list">
+            {counters.map(c => (
+              <li key={c.name}>{c.name}</li>
+            ))}
+          </ul>
+        </>
+      )}
     </div>
   );
 };

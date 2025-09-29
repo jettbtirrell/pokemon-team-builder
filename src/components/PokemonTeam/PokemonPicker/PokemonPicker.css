@@ -1,5 +1,6 @@
 .pokemon-picker {
   padding: 10px;
+  max-width: 200px;
   border-radius: 5px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
   text-align: center;
@@ -7,16 +8,15 @@
 }
 
 .pokemon-picker .pokemon-image-box {
-  margin-top: 10px;
+  max-width: 200px;
+  position: center;
 }
 
 .pokemon-picker .pokemon-image {
-  max-width: 200%;
-  max-height: 200%;
   image-rendering: pixelated;
   image-rendering: crisp-edges;
-  transform: scale(2);
-  transform-origin: bottom right;
+  /* transform: scale(2);
+  transform-origin: bottom right; */
 }
 
 .pokemon-picker .css-yk16xz-control {
@@ -51,13 +51,11 @@
 }
 
 .pokemon-types {
-  position: absolute;
-  top: 60px;
-  left: 50%;
-  transform: translateX(-50%);
   display: flex;
   justify-content: center;
   gap: 5px;
+  flex-wrap: wrap;
+  margin-top: 8px;
 }
 
 .shiny-toggle {

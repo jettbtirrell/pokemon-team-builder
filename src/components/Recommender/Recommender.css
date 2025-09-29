@@ -31,8 +31,7 @@
 
 .rec-sprite {
   image-rendering: pixelated;
-  width: 56px;
-  height: 56px;
+  image-rendering: crisp-edges;
 }
 
 .rec-meta {

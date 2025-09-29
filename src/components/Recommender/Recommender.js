@@ -10,13 +10,14 @@ const normalizeName = (name) => {
   return name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
 };
 
-const Recommender = ({ pokemonTeam, onAddPokemon }) => {
+const Recommender = ({ pokemonTeam, onAddPokemon, strictCounters }) => {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    const res = recommendAdditions(pokemonTeam, 10);
+    const res = recommendAdditions(pokemonTeam, 10, strictCounters);
     setData(res);
-  }, [pokemonTeam]);
+  }, [pokemonTeam, strictCounters]);
+
 
   if (!data) return (
     <div className="recommender-card">

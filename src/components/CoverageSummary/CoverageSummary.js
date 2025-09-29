@@ -1,8 +1,19 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { coverageSummary } from "../analysis";
 
-const CoverageSummary = ({ pokemonTeam }) => {
-  if (!pokemonTeam || pokemonTeam.length === 0) {
+const CoverageSummary = ({ pokemonTeam, strictCounters }) => {
+  const [summary, setSummary] = useState(null);
+
+  useEffect(() => {
+    if (pokemonTeam && pokemonTeam.length > 0) {
+      const res = coverageSummary(pokemonTeam, strictCounters);
+      setSummary(res);
+    } else {
+      setSummary(null);
+    }
+  }, [pokemonTeam, strictCounters]);
+
+  if (!summary) {
     return (
       <div className="coverage-summary">
         <h3>Coverage Summary</h3>
@@ -11,11 +22,9 @@ const CoverageSummary = ({ pokemonTeam }) => {
     );
   }
 
-  const summary = coverageSummary(pokemonTeam);
-
   return (
-  <div className="counter-summary">
-    <h3>Counter Summary</h3>
+    <div className="counter-summary">
+      <h3>Counter Summary</h3>
       <p>{summary.totalCountered} out of {summary.total} Pokémon are countered</p>
       <p>{summary.counteredBy2} countered by 2 or more</p>
       <p>{summary.counteredBy3} countered by 3 or more</p>

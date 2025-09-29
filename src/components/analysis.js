@@ -43,32 +43,33 @@ const isEffective = (attackType, attackerTypes, defenderType) => {
          effectiveness(defenderType, attackerTypes) < 1;
 };
 
-const isCounter = (attacker, defender) => {
+const isCounter = (attacker, defender, strict = true) => {
   if (!attacker.moveTypes?.length || !attacker.pokemonTypes?.length) return false;
 
   const hasSuperEffective = attacker.moveTypes.some(moveType =>
     effectiveness(moveType, defender.types) > 1
   );
-
   if (!hasSuperEffective) return false;
 
-  const allDefenderStabsIneffective = defender.types.every(stab =>
-    effectiveness(stab, attacker.pokemonTypes) < 1
-  );
-
-  return hasSuperEffective && allDefenderStabsIneffective;
+  if (strict) {
+    const allDefenderStabsIneffective = defender.types.every(stab =>
+      effectiveness(stab, attacker.pokemonTypes) < 1
+    );
+    return hasSuperEffective && allDefenderStabsIneffective;
+  } else {
+    const noDefenderSuperEffective = defender.types.every(stab =>
+      effectiveness(stab, attacker.pokemonTypes) <= 1
+    );
+    return hasSuperEffective && noDefenderSuperEffective;
+  }
 };
 
-const coverageSummary = (team) => {
-  const counters = analyzePokemonCounters(team);
+
+const coverageSummary = (team, strictCounters = true) => {
+  const counters = analyzePokemonCounters(team, strictCounters);
   const total = Object.keys(counters).length;
 
-  let totalCountered = 0;
-  let counteredBy2 = 0;
-  let counteredBy3 = 0;
-  let counteredBy4 = 0;
-  let counteredBy5 = 0;
-  let counteredBy6 = 0;
+  let totalCountered = 0, counteredBy2 = 0, counteredBy3 = 0, counteredBy4 = 0, counteredBy5 = 0, counteredBy6 = 0;
 
   Object.values(counters).forEach(counterList => {
     const count = counterList.length;
@@ -80,23 +81,15 @@ const coverageSummary = (team) => {
     if (count >= 6) counteredBy6++;
   });
 
-  return {
-    total,
-    totalCountered,
-    counteredBy2,
-    counteredBy3,
-    counteredBy4,
-    counteredBy5,
-    counteredBy6
-  };
+  return { total, totalCountered, counteredBy2, counteredBy3, counteredBy4, counteredBy5, counteredBy6 };
 };
 
-const analyzePokemonCounters = (team) => {
+const analyzePokemonCounters = (team, strictCounters = true) => {
   const result = {};
   gen5Pokemon.forEach(defender => {
     result[defender.name] = [];
     team.forEach(attacker => {
-      if (attacker.name && isCounter(attacker, defender)) {
+      if (attacker.name && isCounter(attacker, defender, strictCounters)) {
         result[defender.name].push(attacker.name);
       }
     });
@@ -201,19 +194,19 @@ const recommendations = (team, teamSize) => {
   return recs.length ? recs : ["None!"];
 };
 
-const countCounteredOnce = (team) => {
-  const mapping = analyzePokemonCounters(team);
+const countCounteredOnce = (team, strictCounters = true) => {
+  const mapping = analyzePokemonCounters(team, strictCounters);
   let count = 0;
   Object.values(mapping).forEach(arr => { if (arr.length > 0) count++; });
   return { count, total: gen5Pokemon.length, mapping };
 };
 
-const recommendAdditions = (team, topN = 10) => {
-  const base = countCounteredOnce(team);
+const recommendAdditions = (team, topN = 10, strictCounters = true) => {
+  const base = countCounteredOnce(team, strictCounters);
   const baseCount = base.count;
   const results = gen5Pokemon.map(p => {
     const simTeam = [...team, { name: p.name, moveTypes: p.types, pokemonTypes: p.types }];
-    const sim = countCounteredOnce(simTeam);
+    const sim = countCounteredOnce(simTeam, strictCounters);
     return {
       name: p.name,
       id: p.id,

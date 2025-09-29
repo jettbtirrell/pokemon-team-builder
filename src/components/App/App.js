@@ -23,6 +23,7 @@ function App() {
     Array(6).fill({ name: '', moveTypes: [], pokemonTypes: [] })
   );
   const [animationsEnabled, setAnimationsEnabled] = useState(true);
+  const [strictCounters, setStrictCounters] = useState(true);
 
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
@@ -175,6 +176,14 @@ const handleAddPokemon = async (pokemonName, pokemonTypes = null) => {
       {animationsEnabled ? "Disable Animations" : "Enable Animations"}
     </button>
 
+    <button
+      onClick={() => setStrictCounters((prev) => !prev)}
+      className="toggle-counters-btn"
+    >
+      {strictCounters ? "Loose Counter Mode" : "Strict Counter Mode"}
+    </button>
+
+
     <div className="team-section">
       <PokemonTeam
         numPickers={numPickers}
@@ -182,12 +191,15 @@ const handleAddPokemon = async (pokemonName, pokemonTypes = null) => {
         pokemonTeam={pokemonTeam}
         animationsEnabled={animationsEnabled}
       />
-      <CoverageSummary pokemonTeam={filteredPokemonTeam} />
+      <CoverageSummary
+        pokemonTeam={filteredPokemonTeam}
+        strictCounters={strictCounters}
+      />
     </div>
 
     <div className="analysis-section">
-      <Recommender pokemonTeam={filteredPokemonTeam} onAddPokemon={handleAddPokemon} />
-      <PokemonCoverage pokemonCounters={pokemonCounters} />
+      <Recommender pokemonTeam={filteredPokemonTeam} onAddPokemon={handleAddPokemon} strictCounters={strictCounters} />
+      <PokemonCoverage pokemonCounters={analyzePokemonCounters(filteredPokemonTeam, strictCounters)} />
     </div>
 
     <footer className="footer">

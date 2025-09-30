@@ -1,78 +1,100 @@
 import gen5Pokemon from "../data/gen5_pokemon.json";
-
-
+import allPokemon from "../data/all_pokemon.json";
 
 const TYPES = [
-    'normal', 'fire', 'water', 'electric', 'grass', 'ice', 'fighting', 'poison', 'ground', 'flying', 'psychic', 'bug', 'rock', 'ghost', 'dragon', 'dark', 'steel'
+  "normal", "fire", "water", "electric", "grass", "ice",
+  "fighting", "poison", "ground", "flying", "psychic",
+  "bug", "rock", "ghost", "dragon", "dark", "steel"
 ];
 
 const EFFECTIVENESS = [
-    [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.5, 0.0, 1.0, 1.0, 0.5],
-    [1.0, 0.5, 0.5, 1.0, 2.0, 2.0, 1.0, 1.0, 1.0, 1.0, 1.0, 2.0, 0.5, 1.0, 0.5, 1.0, 2.0],
-    [1.0, 2.0, 0.5, 1.0, 0.5, 1.0, 1.0, 1.0, 2.0, 1.0, 1.0, 1.0, 2.0, 1.0, 0.5, 1.0, 1.0],
-    [1.0, 1.0, 2.0, 0.5, 0.5, 1.0, 1.0, 1.0, 0.0, 2.0, 1.0, 1.0, 1.0, 1.0, 0.5, 1.0, 1.0],
-    [1.0, 0.5, 2.0, 1.0, 0.5, 1.0, 1.0, 0.5, 2.0, 0.5, 1.0, 0.5, 2.0, 1.0, 0.5, 1.0, 0.5],
-    [1.0, 0.5, 0.5, 1.0, 2.0, 0.5, 1.0, 1.0, 2.0, 2.0, 1.0, 1.0, 1.0, 1.0, 2.0, 1.0, 0.5],
-    [2.0, 1.0, 1.0, 1.0, 1.0, 2.0, 1.0, 0.5, 1.0, 0.5, 0.5, 0.5, 2.0, 0.0, 1.0, 2.0, 2.0],
-    [1.0, 1.0, 1.0, 1.0, 2.0, 1.0, 1.0, 0.5, 0.5, 1.0, 1.0, 1.0, 0.5, 0.5, 1.0, 1.0, 0.0],
-    [1.0, 2.0, 1.0, 2.0, 0.5, 1.0, 1.0, 2.0, 1.0, 0.0, 1.0, 0.5, 2.0, 1.0, 1.0, 1.0, 2.0],
-    [1.0, 1.0, 1.0, 0.5, 2.0, 1.0, 2.0, 1.0, 1.0, 1.0, 1.0, 2.0, 0.5, 1.0, 1.0, 1.0, 0.5],
-    [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 2.0, 2.0, 1.0, 1.0, 0.5, 1.0, 1.0, 1.0, 1.0, 0.0, 0.5],
-    [1.0, 0.5, 1.0, 1.0, 2.0, 1.0, 0.5, 0.5, 1.0, 0.5, 2.0, 1.0, 1.0, 0.5, 1.0, 2.0, 0.5],
-    [1.0, 2.0, 1.0, 1.0, 1.0, 2.0, 0.5, 1.0, 0.5, 2.0, 1.0, 2.0, 1.0, 1.0, 1.0, 1.0, 0.5],
-    [0.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 2.0, 1.0, 1.0, 2.0, 1.0, 0.5, 0.5],
-    [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 2.0, 1.0, 0.5],
-    [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.5, 1.0, 1.0, 1.0, 2.0, 1.0, 1.0, 2.0, 1.0, 0.5, 0.5],
-    [1.0, 0.5, 0.5, 0.5, 1.0, 2.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.5, 1.0, 1.0, 1.0, 0.5]
+  [1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.5,0.0,1.0,1.0,0.5],
+  [1.0,0.5,0.5,1.0,2.0,2.0,1.0,1.0,1.0,1.0,1.0,2.0,0.5,1.0,0.5,1.0,2.0],
+  [1.0,2.0,0.5,1.0,0.5,1.0,1.0,1.0,2.0,1.0,1.0,1.0,2.0,1.0,0.5,1.0,1.0],
+  [1.0,1.0,2.0,0.5,0.5,1.0,1.0,1.0,0.0,2.0,1.0,1.0,1.0,1.0,0.5,1.0,1.0],
+  [1.0,0.5,2.0,1.0,0.5,1.0,1.0,0.5,2.0,0.5,1.0,0.5,2.0,1.0,0.5,1.0,0.5],
+  [1.0,0.5,0.5,1.0,2.0,0.5,1.0,1.0,2.0,2.0,1.0,1.0,1.0,1.0,2.0,1.0,0.5],
+  [2.0,1.0,1.0,1.0,1.0,2.0,1.0,0.5,1.0,0.5,0.5,0.5,2.0,0.0,1.0,2.0,2.0],
+  [1.0,1.0,1.0,1.0,2.0,1.0,1.0,0.5,0.5,1.0,1.0,1.0,0.5,0.5,1.0,1.0,0.0],
+  [1.0,2.0,1.0,2.0,0.5,1.0,1.0,2.0,1.0,0.0,1.0,0.5,2.0,1.0,1.0,1.0,2.0],
+  [1.0,1.0,1.0,0.5,2.0,1.0,2.0,1.0,1.0,1.0,1.0,2.0,0.5,1.0,1.0,1.0,0.5],
+  [1.0,1.0,1.0,1.0,1.0,1.0,2.0,2.0,1.0,1.0,0.5,1.0,1.0,1.0,1.0,0.0,0.5],
+  [1.0,0.5,1.0,1.0,2.0,1.0,0.5,0.5,1.0,0.5,2.0,1.0,1.0,0.5,1.0,2.0,0.5],
+  [1.0,2.0,1.0,1.0,1.0,2.0,0.5,1.0,0.5,2.0,1.0,2.0,1.0,1.0,1.0,1.0,0.5],
+  [0.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,2.0,1.0,1.0,2.0,1.0,0.5,0.5],
+  [1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,2.0,1.0,0.5],
+  [1.0,1.0,1.0,1.0,1.0,1.0,0.5,1.0,1.0,1.0,2.0,1.0,1.0,2.0,1.0,0.5,0.5],
+  [1.0,0.5,0.5,0.5,1.0,2.0,1.0,1.0,1.0,1.0,1.0,1.0,0.5,1.0,1.0,1.0,0.5]
 ];
+
+const getDataset = (allGens) => (allGens ? allPokemon : gen5Pokemon);
 
 const effectiveness = (attackType, defenderTypes) => {
   const attackIdx = TYPES.indexOf(attackType);
   if (attackIdx === -1) return 1;
-  let ans = 1;
-  defenderTypes.forEach(defenderType => {
-    const defenderIdx = TYPES.indexOf(defenderType);
-    if (defenderIdx === -1) return;
-    ans *= EFFECTIVENESS[attackIdx][defenderIdx];
-  });
-  return ans;
-};
-
-const isEffective = (attackType, attackerTypes, defenderType) => {
-  return effectiveness(attackType, [defenderType]) > 1 &&
-         effectiveness(defenderType, attackerTypes) < 1;
+  return defenderTypes.reduce((acc, def) => {
+    const defIdx = TYPES.indexOf(def);
+    return defIdx === -1 ? acc : acc * EFFECTIVENESS[attackIdx][defIdx];
+  }, 1);
 };
 
 const isCounter = (attacker, defender, strict = true) => {
   if (!attacker.moveTypes?.length || !attacker.pokemonTypes?.length) return false;
-
-  const hasSuperEffective = attacker.moveTypes.some(moveType =>
-    effectiveness(moveType, defender.types) > 1
-  );
-  if (!hasSuperEffective) return false;
-
+  const hasSE = attacker.moveTypes.some(m => effectiveness(m, defender.types) > 1);
+  if (!hasSE) return false;
   if (strict) {
-    const allDefenderStabsIneffective = defender.types.every(stab =>
-      effectiveness(stab, attacker.pokemonTypes) < 1
-    );
-    return hasSuperEffective && allDefenderStabsIneffective;
+    return defender.types.every(stab => effectiveness(stab, attacker.pokemonTypes) < 1);
   } else {
-    const noDefenderSuperEffective = defender.types.every(stab =>
-      effectiveness(stab, attacker.pokemonTypes) <= 1
-    );
-    return hasSuperEffective && noDefenderSuperEffective;
+    return defender.types.every(stab => effectiveness(stab, attacker.pokemonTypes) <= 1);
   }
 };
 
+const analyzePokemonCounters = (team, strictCounters = true, dataset = gen5Pokemon) => {
+  const result = {};
+  dataset.forEach(defender => {
+    result[defender.name] = { counters: [], weaknesses: [] };
+    team.forEach(attacker => {
+      if (!attacker.name) return;
+      if (isCounter(attacker, defender, strictCounters)) {
+        result[defender.name].counters.push(attacker.name);
+      }
+      const hasSE = defender.types.some(type =>
+        effectiveness(type, attacker.pokemonTypes) > 1
+      );
+      if (hasSE) result[defender.name].weaknesses.push(attacker.name);
+    });
+  });
+  return result;
+};
 
-const coverageSummary = (team, strictCounters = true) => {
-  const counters = analyzePokemonCounters(team, strictCounters);
+const analyzeSupportThreats = (team, dataset = gen5Pokemon) => {
+  const result = {};
+  dataset.forEach(defender => {
+    result[defender.name] = [];
+    team.forEach(attacker => {
+      if (!attacker.pokemonTypes?.length) return;
+      const hasSEStab = defender.types.some(stab =>
+        effectiveness(stab, attacker.pokemonTypes) > 1
+      );
+      if (hasSEStab) result[defender.name].push(attacker.name);
+    });
+  });
+  return result;
+};
+
+const countCounteredOnce = (team, strictCounters = true, dataset = gen5Pokemon) => {
+  const mapping = analyzePokemonCounters(team, strictCounters, dataset);
+  let count = 0;
+  Object.values(mapping).forEach(obj => { if (obj.counters.length > 0) count++; });
+  return { count, total: dataset.length, mapping };
+};
+
+const coverageSummary = (team, strictCounters = true, dataset = gen5Pokemon) => {
+  const counters = analyzePokemonCounters(team, strictCounters, dataset);
   const total = Object.keys(counters).length;
-
   let totalCountered = 0, counteredBy2 = 0, counteredBy3 = 0, counteredBy4 = 0, counteredBy5 = 0, counteredBy6 = 0;
-
-  Object.values(counters).forEach(counterList => {
-    const count = counterList.length;
+  Object.values(counters).forEach(obj => {
+    const count = obj.counters.length;
     if (count > 0) totalCountered++;
     if (count >= 2) counteredBy2++;
     if (count >= 3) counteredBy3++;
@@ -80,36 +102,8 @@ const coverageSummary = (team, strictCounters = true) => {
     if (count >= 5) counteredBy5++;
     if (count >= 6) counteredBy6++;
   });
-
   return { total, totalCountered, counteredBy2, counteredBy3, counteredBy4, counteredBy5, counteredBy6 };
 };
-
-const analyzePokemonCounters = (team, strictCounters = true) => {
-  const result = {};
-  gen5Pokemon.forEach(defender => {
-    result[defender.name] = {
-      counters: [],
-      weaknesses: []
-    };
-
-    team.forEach(attacker => {
-      if (!attacker.name) return;
-
-      if (isCounter(attacker, defender, strictCounters)) {
-        result[defender.name].counters.push(attacker.name);
-      }
-
-      const hasSE = defender.types.some(type =>
-        effectiveness(type, attacker.pokemonTypes) > 1
-      );
-      if (hasSE) {
-        result[defender.name].weaknesses.push(attacker.name);
-      }
-    });
-  });
-  return result;
-};
-
 
 const analyzeTeam = (team) => {
   const defenderIsWeakTo = TYPES.reduce((acc, type) => {
@@ -119,7 +113,7 @@ const analyzeTeam = (team) => {
   team.forEach(pokemon => {
     pokemon.moveTypes.forEach(attackType => {
       TYPES.forEach(defenderType => {
-        if (isEffective(attackType, pokemon.pokemonTypes, defenderType)) {
+        if (effectiveness(attackType, [defenderType]) > 1) {
           defenderIsWeakTo[defenderType].add(pokemon.name);
         }
       });
@@ -134,180 +128,67 @@ const analyzeTeam = (team) => {
 const defendersCovered = (team, n = 1) => {
   const analysisResult = analyzeTeam(team);
   return TYPES.reduce((count, type) => {
-    if (analysisResult[type] && analysisResult[type].length >= n) {
-      count++;
-    }
+    if (analysisResult[type] && analysisResult[type].length >= n) count++;
     return count;
   }, 0);
 };
 
-const arrayIsGreater = (arr1, arr2) => {
-  for (let i = 0; i < arr1.length; i++) {
-    if (arr1[i] > arr2[i]) return true;
-    if (arr1[i] < arr2[i]) return false;
-  }
-  return false;
-};
-
-const recommendationsAdd = (team) => {
-  let best = [defendersCovered(team, 1), defendersCovered(team, 2), defendersCovered(team, 3)];
-  const before = [...best];
-  let recommendations = [];
-  TYPES.forEach((pkmnType) => {
-    const newTeam = [...team, { name: 'XXX', pokemonTypes: [pkmnType], moveTypes: [pkmnType] }];
-    const curr = [defendersCovered(newTeam, 1), defendersCovered(newTeam, 2), defendersCovered(newTeam, 3)];
-    if (arrayIsGreater(curr, before)) {
-      recommendations.push({
-        recommendation: `Add ${pkmnType} Pokémon (coverage ${curr.join('/')})`,
-        score: curr
-      });
-    }
-  });
-  recommendations.sort((a, b) => {
-    for (let i = 0; i < a.score.length; i++) {
-      if (b.score[i] !== a.score[i]) return b.score[i] - a.score[i];
-    }
-    return 0;
-  });
-  return recommendations.slice(0, 10).map(rec => rec.recommendation);
-};
-
-const recommendationsReplace = (team) => {
-  let best = [defendersCovered(team, 1), defendersCovered(team, 2), defendersCovered(team, 3)];
-  const before = [...best];
-  let recommendations = [];
-  TYPES.forEach((pkmnType) => {
-    team.forEach((pokemon, i) => {
-      const newTeam = [...team];
-      newTeam[i] = { name: 'XXX', pokemonTypes: [pkmnType], moveTypes: [pkmnType] };
-      const curr = [defendersCovered(newTeam, 1), defendersCovered(newTeam, 2), defendersCovered(newTeam, 3)];
-      if (arrayIsGreater(curr, before)) {
-        recommendations.push({
-          recommendation: `Add ${pkmnType} move or replace ${pokemon.name} with ${pkmnType} (coverage ${curr.join('/')})`,
-          score: curr
-        });
-      }
-    });
-  });
-  recommendations.sort((a, b) => {
-    for (let i = 0; i < a.score.length; i++) {
-      if (b.score[i] !== a.score[i]) return b.score[i] - a.score[i];
-    }
-    return 0;
-  });
-  return recommendations.slice(0, 10).map(rec => rec.recommendation);
-};
-
-const recommendations = (team, teamSize) => {
-  let recs;
-  if (team.length < teamSize) {
-    recs = recommendationsAdd(team);
-  } else {
-    recs = recommendationsReplace(team);
-  }
-  return recs.length ? recs : ["None!"];
-};
-
-const countCounteredOnce = (team, strictCounters = true) => {
-  const mapping = analyzePokemonCounters(team, strictCounters);
-  let count = 0;
-  Object.values(mapping).forEach(obj => {
-    if (obj.counters.length > 0) count++;
-  });
-  return { count, total: gen5Pokemon.length, mapping };
-};
-
-const recommendAdditions = (team, topN = 30, strictCounters = true) => {
-  const base = countCounteredOnce(team, strictCounters);
+const recommendAdditions = (team, topN = 30, strictCounters = true, allGens = false) => {
+  const dataset = getDataset(allGens);
+  const base = countCounteredOnce(team, strictCounters, dataset);
   const baseCount = base.count;
-
-  const results = gen5Pokemon.map(p => {
+  const results = dataset.map(p => {
     const simTeam = [...team, { name: p.name, moveTypes: p.types, pokemonTypes: p.types }];
-    const sim = countCounteredOnce(simTeam, strictCounters);
+    const sim = countCounteredOnce(simTeam, strictCounters, dataset);
     return {
-      name: p.name,
-      id: p.id,
-      sprite: p.sprite,
+      name: p.name, id: p.id, sprite: p.sprite,
       delta: sim.count - baseCount,
-      newCount: sim.count,
+      newCount: sim.count
     };
-  })
-  .filter(r => r.delta > 0)
-  .sort((a, b) => b.delta - a.delta)
-  .slice(0, topN);
-
-  return { baseCount, total: gen5Pokemon.length, results };
+  }).filter(r => r.delta > 0)
+    .sort((a, b) => b.delta - a.delta)
+    .slice(0, topN);
+  return { baseCount, total: dataset.length, results };
 };
 
-const recommendSupportAdditions = (team, topN = 30, strict = true) => {
-  const baseCounters = analyzePokemonCounters(team, strict);
-  const baseSupport = analyzeSupportThreats(team);
-
+const recommendSupportAdditions = (team, topN = 30, strict = true, allGens = false) => {
+  const dataset = getDataset(allGens);
+  const baseCounters = analyzePokemonCounters(team, strict, dataset);
+  const baseSupport = analyzeSupportThreats(team, dataset);
   const problemEnemies = Object.entries(baseSupport)
     .filter(([enemy, weakList]) =>
       weakList.length > 0 && (!baseCounters[enemy] || baseCounters[enemy].counters.length === 0)
     )
     .map(([enemy]) => enemy);
-
-  const results = gen5Pokemon.map(p => {
+  const results = dataset.map(p => {
     const simTeam = [...team, { name: p.name, moveTypes: p.types, pokemonTypes: p.types }];
-    const simCounters = analyzePokemonCounters(simTeam, strict);
-
+    const simCounters = analyzePokemonCounters(simTeam, strict, dataset);
     const fixes = problemEnemies.filter(enemy =>
       simCounters[enemy] && simCounters[enemy].counters.includes(p.name)
     ).length;
-
-    return {
-      name: p.name,
-      id: p.id,
-      sprite: p.sprite,
-      fixes,
-    };
-  })
-  .filter(r => r.fixes > 0)
-  .sort((a, b) => b.fixes - a.fixes)
-  .slice(0, topN);
-
-  return { 
-    problemCount: problemEnemies.length, 
+    return { name: p.name, id: p.id, sprite: p.sprite, fixes };
+  }).filter(r => r.fixes > 0)
+    .sort((a, b) => b.fixes - a.fixes)
+    .slice(0, topN);
+  return {
+    problemCount: problemEnemies.length,
     results,
-    percentMitigated: problemEnemies.length > 0 
-      ? Math.round((results[0]?.fixes || 0) / problemEnemies.length * 100) 
+    percentMitigated: problemEnemies.length > 0
+      ? Math.round((results[0]?.fixes || 0) / problemEnemies.length * 100)
       : 0
   };
 };
 
-
-const analyzeSupportThreats = (team) => {
-  const result = {};
-  gen5Pokemon.forEach(defender => {
-    result[defender.name] = [];
-    team.forEach(attacker => {
-      if (!attacker.pokemonTypes?.length) return;
-      const hasSEStab = defender.types.some(stab =>
-        effectiveness(stab, attacker.pokemonTypes) > 1
-      );
-      if (hasSEStab) result[defender.name].push(attacker.name);
-    });
-  });
-  return result;
-};
-
-
-
-
-
 export {
-  analyzeTeam,
-  defendersCovered,
-  recommendations,
   TYPES,
   effectiveness,
-  isEffective,
   isCounter,
   analyzePokemonCounters,
+  analyzeSupportThreats,
   coverageSummary,
   countCounteredOnce,
   recommendAdditions,
-  recommendSupportAdditions
+  recommendSupportAdditions,
+  analyzeTeam,
+  defendersCovered
 };

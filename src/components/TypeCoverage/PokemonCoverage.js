@@ -1,8 +1,10 @@
 import React from "react";
 import gen5Data from "../../data/gen5_pokemon.json";
+import allData from "../../data/all_pokemon.json";
 import "./PokemonCoverage.css";
 
-const PokemonCoverage = ({ pokemonCounters, supportMode }) => {
+const PokemonCoverage = ({ pokemonCounters, supportMode, allGens = false }) => {
+  const dataset = allGens ? allData : gen5Data;
   if (!pokemonCounters) {
     return (
       <div className="pokemon-coverage">
@@ -17,7 +19,7 @@ const PokemonCoverage = ({ pokemonCounters, supportMode }) => {
       <h2>Pokémon Counters</h2>
       <div className="pokemon-grid">
         {Object.entries(pokemonCounters).map(([pokemon, data]) => {
-          const matched = gen5Data.find(p => p.name === pokemon.toLowerCase());
+          const matched = dataset.find(p => p.name === pokemon.toLowerCase());
           const counters = data.counters || [];
           const weaknesses = data.weaknesses || [];
 
@@ -44,7 +46,7 @@ const PokemonCoverage = ({ pokemonCounters, supportMode }) => {
                   if (!counter) {
                     return <div key={i} className="counter-slot empty"></div>;
                   }
-                  const counterMatch = gen5Data.find(
+                  const counterMatch = dataset.find(
                     p => p.name === counter.toLowerCase()
                   );
                   return (
@@ -71,7 +73,7 @@ const PokemonCoverage = ({ pokemonCounters, supportMode }) => {
                     if (!weak) {
                       return <div key={i} className="weakness-slot empty"></div>;
                     }
-                    const weakMatch = gen5Data.find(
+                    const weakMatch = dataset.find(
                       p => p.name === weak.toLowerCase()
                     );
                     return (

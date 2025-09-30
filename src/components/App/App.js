@@ -15,7 +15,8 @@ import PokemonCoverage from '../TypeCoverage/PokemonCoverage';
 import { analyzePokemonCounters } from '../analysis';
 import CoverageSummary from "../CoverageSummary/CoverageSummary";
 import Recommender from '../Recommender/Recommender';
-
+import gen5Data from "../../data/gen5_pokemon.json";
+import allData from "../../data/all_pokemon.json";
 
 function App() {
   const [numPickers, setNumPickers] = useState(6);
@@ -25,6 +26,7 @@ function App() {
   const [animationsEnabled, setAnimationsEnabled] = useState(true);
   const [strictCounters, setStrictCounters] = useState(true);
   const [supportMode, setSupportMode] = useState(true);
+  const [allGens, setAllGens] = useState(false);
 
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
@@ -188,6 +190,11 @@ const handleAddPokemon = async (pokemonName, pokemonTypes = null) => {
       {supportMode ? "Disable Support Mode" : "Enable Support Mode"}
     </button>
 
+    <button onClick={() => setAllGens(!allGens)}>
+      {allGens ? "Gen 5 Only" : "All Gens"}
+    </button>
+
+
 
 
     <div className="team-section">
@@ -205,8 +212,8 @@ const handleAddPokemon = async (pokemonName, pokemonTypes = null) => {
     </div>
 
     <div className="analysis-section">
-      <Recommender pokemonTeam={filteredPokemonTeam} onAddPokemon={handleAddPokemon} strictCounters={strictCounters}  supportMode={supportMode}/>
-      <PokemonCoverage pokemonCounters={analyzePokemonCounters(filteredPokemonTeam, strictCounters)} supportMode={supportMode} pokemonTeam={pokemonTeam} />
+      <Recommender pokemonTeam={filteredPokemonTeam} onAddPokemon={handleAddPokemon} strictCounters={strictCounters}  supportMode={supportMode} allGens={allGens}/>
+      <PokemonCoverage pokemonCounters={analyzePokemonCounters(filteredPokemonTeam, strictCounters, allGens ? allData : gen5Data)} supportMode={supportMode} pokemonTeam={pokemonTeam} allGens={allGens} />
     </div>
 
     <footer className="footer">

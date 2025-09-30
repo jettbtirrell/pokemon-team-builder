@@ -10,14 +10,14 @@ const normalizeName = (name) => {
   return name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
 };
 
-const Recommender = ({ pokemonTeam, onAddPokemon, strictCounters, supportMode }) => {
+const Recommender = ({ pokemonTeam, onAddPokemon, strictCounters, supportMode, allGens }) => {
   const [data, setData] = useState(null);
 
   useEffect(() => {
     if (supportMode) {
-      setData(recommendSupportAdditions(pokemonTeam, 35, strictCounters));
+      setData(recommendSupportAdditions(pokemonTeam, 35, strictCounters, allGens));
     } else {
-      setData(recommendAdditions(pokemonTeam, 35, strictCounters));
+      setData(recommendAdditions(pokemonTeam, 35, strictCounters, allGens));
     }
   }, [pokemonTeam, supportMode, strictCounters]);
 
@@ -46,7 +46,7 @@ const Recommender = ({ pokemonTeam, onAddPokemon, strictCounters, supportMode })
       <h3>Recommended Additions</h3>
       <div className="rec-summary">
         {supportMode ? (
-          <>Current exploitable enemies: {data.problemCount}</>
+          <>Current uncountered weaknesses: {data.problemCount}</>
         ) : (
           <>Current: {data.baseCount}/{data.total}</>
         )}
@@ -63,7 +63,7 @@ const Recommender = ({ pokemonTeam, onAddPokemon, strictCounters, supportMode })
               <div className="rec-name">{cap(r.name)}</div>
               <div className="rec-delta">
                 {supportMode ? (
-                  <>Fixes {r.fixes} ({Math.round((r.fixes / data.problemCount) * 100)}%)</>
+                  <>Counters {r.fixes} ({Math.round((r.fixes / data.problemCount) * 100)}%)</>
                 ) : (
                   <>{data.baseCount}/{data.total} → {r.newCount}/{data.total} (+{r.delta})</>
                 )}

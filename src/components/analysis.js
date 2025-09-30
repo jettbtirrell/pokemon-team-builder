@@ -217,7 +217,7 @@ const countCounteredOnce = (team, strictCounters = true) => {
   return { count, total: gen5Pokemon.length, mapping };
 };
 
-const recommendAdditions = (team, topN = 10, strictCounters = true) => {
+const recommendAdditions = (team, topN = 30, strictCounters = true) => {
   const base = countCounteredOnce(team, strictCounters);
   const baseCount = base.count;
 
@@ -239,7 +239,7 @@ const recommendAdditions = (team, topN = 10, strictCounters = true) => {
   return { baseCount, total: gen5Pokemon.length, results };
 };
 
-const recommendSupportAdditions = (team, topN = 10, strict = true) => {
+const recommendSupportAdditions = (team, topN = 30, strict = true) => {
   const baseCounters = analyzePokemonCounters(team, strict);
   const baseSupport = analyzeSupportThreats(team);
 

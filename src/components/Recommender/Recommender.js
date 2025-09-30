@@ -3,7 +3,7 @@ import "./Recommender.css";
 import pokemon from "pokemon";
 import { recommendAdditions, recommendSupportAdditions } from "../analysis";
 
-const cap = s => s.charAt(0).toUpperCase() + s.slice(1);
+const cap = (s) => s.charAt(0).toUpperCase() + s.slice(1);
 
 const normalizeName = (name) => {
   if (!name) return "";
@@ -15,20 +15,20 @@ const Recommender = ({ pokemonTeam, onAddPokemon, strictCounters, supportMode })
 
   useEffect(() => {
     if (supportMode) {
-      setData(recommendSupportAdditions(pokemonTeam, 10, strictCounters));
+      setData(recommendSupportAdditions(pokemonTeam, 35, strictCounters));
     } else {
-      setData(recommendAdditions(pokemonTeam, 10, strictCounters));
+      setData(recommendAdditions(pokemonTeam, 35, strictCounters));
     }
   }, [pokemonTeam, supportMode, strictCounters]);
 
-
-
-  if (!data) return (
-    <div className="recommender-card">
-      <h3>Recommended Additions</h3>
-      <p>No data yet.</p>
-    </div>
-  );
+  if (!data) {
+    return (
+      <div className="recommender-card">
+        <h3>Recommended Additions</h3>
+        <p>No data yet.</p>
+      </div>
+    );
+  }
 
   const handleClick = (name) => {
     try {
@@ -45,29 +45,29 @@ const Recommender = ({ pokemonTeam, onAddPokemon, strictCounters, supportMode })
     <div className="recommender-card">
       <h3>Recommended Additions</h3>
       <div className="rec-summary">
-        {supportMode
-          ? <>Current exploitable enemies: {data.baseScore}</>
-          : <>Current: {data.baseCount}/{data.total}</>
-        }
+        {supportMode ? (
+          <>Current exploitable enemies: {data.problemCount}</>
+        ) : (
+          <>Current: {data.baseCount}/{data.total}</>
+        )}
       </div>
-      <ul className="rec-list">
+      <ul className="rec-grid">
         {data.results.map((r) => (
           <li
             key={r.id}
             className="rec-item"
             onClick={() => handleClick(r.name)}
-            style={{ cursor: "pointer" }}
           >
             <img src={r.sprite} alt={r.name} className="rec-sprite" />
             <div className="rec-meta">
               <div className="rec-name">{cap(r.name)}</div>
               <div className="rec-delta">
-                {supportMode
-                  ? <>Fixes {r.fixes} ({Math.round((r.fixes / data.problemCount) * 100)}%)</>
-                  : <>{data.baseCount}/{data.total} → {r.newCount}/{data.total} (+{r.delta})</>
-                }
+                {supportMode ? (
+                  <>Fixes {r.fixes} ({Math.round((r.fixes / data.problemCount) * 100)}%)</>
+                ) : (
+                  <>{data.baseCount}/{data.total} → {r.newCount}/{data.total} (+{r.delta})</>
+                )}
               </div>
-
             </div>
           </li>
         ))}
@@ -76,6 +76,5 @@ const Recommender = ({ pokemonTeam, onAddPokemon, strictCounters, supportMode })
     </div>
   );
 };
-
 
 export default Recommender;

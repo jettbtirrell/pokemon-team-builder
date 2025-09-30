@@ -50,13 +50,14 @@
 
 .counter-slot.filled {
   border: none;
-  margin-top: -6px;
+  border: 1px dashed #ccc;  
 }
 
 .counter-icon {
   image-rendering: pixelated;
   image-rendering: crisp-edges;
   display: block;
+  margin-top: -14px;
 }
 
 .weakness-slots {
@@ -70,7 +71,7 @@
 .weakness-slot {
   width: 48px;
   height: 48px;
-  border: 1px solid #f99;
+  border: 1px dashed #f99;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -89,7 +90,7 @@
 .weakness-icon {
   image-rendering: pixelated;
   image-rendering: crisp-edges;
-  margin-top: -6px;
+  margin-top: -14px;
 }
 
 .pokemon-card.problem-card {

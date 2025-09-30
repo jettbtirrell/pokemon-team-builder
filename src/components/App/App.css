@@ -4,23 +4,17 @@
 }
 
 .team-section {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 20px;
-  align-items: start;
-  margin-bottom: 20px;
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  gap: 20px; /* Spacing between team slots */
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
+  margin: 20px auto;
+
 }
 
 .counter-summary {
   max-width: 280px;
   margin: 0 auto;
-}
-
-.analysis-section {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-  margin: 0 20px 0 20px;
 }
 
 .pokemon-coverage {

@@ -204,11 +204,6 @@ const handleAddPokemon = async (pokemonName, pokemonTypes = null) => {
         pokemonTeam={pokemonTeam}
         animationsEnabled={animationsEnabled}
       />
-      <CoverageSummary
-        pokemonTeam={filteredPokemonTeam}
-        strictCounters={strictCounters}
-        supportMode={supportMode}
-      />
     </div>
 
     <div className="analysis-section">

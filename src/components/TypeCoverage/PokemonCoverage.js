@@ -46,7 +46,7 @@ const PokemonCoverage = ({ pokemonCounters, supportMode, allGens = false }) => {
                   if (!counter) {
                     return <div key={i} className="counter-slot empty"></div>;
                   }
-                  const counterMatch = dataset.find(
+                  const counterMatch = allData.find(
                     p => p.name === counter.toLowerCase()
                   );
                   return (
@@ -73,7 +73,7 @@ const PokemonCoverage = ({ pokemonCounters, supportMode, allGens = false }) => {
                     if (!weak) {
                       return <div key={i} className="weakness-slot empty"></div>;
                     }
-                    const weakMatch = dataset.find(
+                    const weakMatch = allData.find(
                       p => p.name === weak.toLowerCase()
                     );
                     return (

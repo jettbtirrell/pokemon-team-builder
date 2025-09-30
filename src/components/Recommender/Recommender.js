@@ -15,9 +15,9 @@ const Recommender = ({ pokemonTeam, onAddPokemon, strictCounters, supportMode, a
 
   useEffect(() => {
     if (supportMode) {
-      setData(recommendSupportAdditions(pokemonTeam, 35, strictCounters, allGens));
+      setData(recommendSupportAdditions(pokemonTeam, 64, strictCounters, allGens));
     } else {
-      setData(recommendAdditions(pokemonTeam, 35, strictCounters, allGens));
+      setData(recommendAdditions(pokemonTeam, 64, strictCounters, allGens));
     }
   }, [pokemonTeam, supportMode, strictCounters]);
 

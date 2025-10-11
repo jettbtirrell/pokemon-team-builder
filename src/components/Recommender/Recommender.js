@@ -72,7 +72,7 @@ const Recommender = ({ pokemonTeam, onAddPokemon, strictCounters, supportMode, a
           </li>
         ))}
       </ul>
-      {data.results.length === 0 && <p>No single addition improves coverage.</p>}
+      {data.results.length === 0 && <p>No single addition counters new weaknesses.</p>}
     </div>
   );
 };
